@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Rubik } from 'next/font/google';
+import { Montserrat } from 'next/font/google'
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
-const rubik = Rubik({
-  variable: '--font-rubik',
-  subsets: ['latin'],
-});
+const montserrat = Montserrat({
+  subsets: ['latin'],      // required
+  weight: ['400', '700'],  // pick the weights you want
+  variable: '--font-montserrat', // optional, for Tailwind
+  display: 'swap',         // better rendering
+})
 
 export const metadata: Metadata = {
   title: "Hustlers Tech",
@@ -19,7 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${rubik.variable} antialiased`}>
+      <body className={`${montserrat.variable} antialiased`}>
+        <Navbar/>
         {children}
       </body>
     </html>
