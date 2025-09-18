@@ -4,10 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 const montserrat = Montserrat({
-  subsets: ['latin'],      // required
-  weight: ['400', '700'],  // pick the weights you want
-  variable: '--font-montserrat', // optional, for Tailwind
-  display: 'swap',         // better rendering
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-montserrat',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
