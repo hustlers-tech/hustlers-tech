@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -13,8 +13,8 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-     className="
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="
     fixed w-full top-0 z-50 
     bg-transparent
     backdrop-blur-lg
@@ -27,7 +27,7 @@ export default function Navbar() {
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Image
                 src="/HustlersTech_logo.png"
@@ -41,32 +41,44 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-8">
-            {['About us', 'Our Services', 'Why choose us', 'Blogs', 'Contact'].map((item, idx) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 * idx }}
-              >
-                <Link
-                  href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                  className="text-white font-medium hover:text-gray-200 transition-colors"
+            {["About us", "Our Services", "Why choose us", "Blogs"].map(
+              (item, idx) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 * idx }}
                 >
-                  {item}
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                    className="
+          relative text-white font-medium transition-colors group
+        "
+                  >
+                    {item}
+                    <span
+                      className="
+    absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] w-0 
+    bg-[#00cc99] 
+    transition-all duration-300 ease-out 
+    group-hover:w-full
+  "
+                    />
+                  </Link>
+                </motion.div>
+              )
+            )}
           </div>
 
           {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              <Link
-                href="/get-started"
-                className="
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <Link
+              href="/get-started"
+              className="
                   hidden md:flex px-5 py-2 rounded-full font-semibold 
                   text-white 
                   bg-gradient-to-r from-[#0099ff] to-[#00cc99] 
@@ -74,10 +86,10 @@ export default function Navbar() {
                   shadow-lg shadow-[#00cc99]/30 
                   transition-all
                 "
-              >
-                Get a Quote
-              </Link>
-            </motion.div>
+            >
+              Get in touch
+            </Link>
+          </motion.div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -95,7 +107,7 @@ export default function Navbar() {
       {open && (
         <motion.div
           initial={{ height: 0, opacity: 0 }}
-          animate={{ height: 'auto', opacity: 1 }}
+          animate={{ height: "auto", opacity: 1 }}
           transition={{ duration: 0.3 }}
           className="
             md:hidden 
@@ -105,21 +117,23 @@ export default function Navbar() {
           "
         >
           <div className="flex flex-col space-y-2 px-4 py-3">
-            {[ 'About us', 'Our Services', 'Why choose us', 'Blogs', 'Contact'].map((item, idx) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.05 * idx }}
-              >
-                <Link
-                  href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                  className="text-white font-medium hover:text-gray-200 transition-colors"
+            {["About us", "Our Services", "Why choose us", "Blogs"].map(
+              (item, idx) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.05 * idx }}
                 >
-                  {item}
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                    className="text-white font-medium hover:text-gray-200 transition-colors"
+                  >
+                    {item}
+                  </Link>
+                </motion.div>
+              )
+            )}
           </div>
         </motion.div>
       )}
