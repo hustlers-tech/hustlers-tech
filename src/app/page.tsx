@@ -17,7 +17,7 @@ export default function Home() {
       heroRef.current,
       { scale: 1 },
       {
-        scale: 0.70,
+        scale: 0.7,
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
@@ -47,10 +47,11 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section Start */}
-      <section
-        className="relative w-full min-h-screen flex items-center bg-gradient-to-b from-black/90 to-[#0099ff]/50 p-2 md:p-8"
-      >
-        <main ref={heroRef} className="flex flex-col gap-6 px-2 md:px-15 w-full">
+      <section className="relative w-full min-h-screen flex items-center text-center bg-gradient-to-b from-black/90 to-[#0099ff]/50 p-2 md:p-8">
+        <main
+          ref={heroRef}
+          className="flex flex-col gap-6 px-2 md:px-15 w-full"
+        >
           <motion.h1
             className="text-[50px] md:text-[100px] font-bold text-white leading-[110%]"
             initial={{ opacity: 0, y: -50 }}
@@ -58,7 +59,26 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.5 }}
           >
             From Idea to Impact. <br />
-            We Hustle It All !
+            We{" "}
+            <motion.span
+              className="
+          bg-gradient-to-r from-[#0099ff] via-[#00cc99] to-[#0099ff]
+          bg-[length:200%_200%]
+          bg-clip-text text-transparent
+        "
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{
+                duration: 1,
+                ease: "linear",
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+            >
+              Hustle
+            </motion.span>{" "}
+            It All !
           </motion.h1>
 
           {/* Animated Paragraph */}
@@ -78,20 +98,32 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            <Link
-              href="/get-started"
-              className="inline-block px-4 md:px-8 py-3 rounded-full font-semibold 
-              text-white text-md md:text-lg
-              bg-gradient-to-r from-[#0099ff] to-[#00cc99] 
-              hover:from-[#00cc99] hover:to-[#0099ff] 
-              shadow-lg shadow-[#00cc99]/30 
-              transition-all"
+            <motion.div
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"], // animate gradient movement
+              }}
+              transition={{
+                duration: 2,
+                ease: "easeInOut",
+                repeat: Infinity,
+              }}
+              className="inline-block rounded-full p-[2px] bg-[length:200%_200%] 
+                   bg-gradient-to-r from-[#0099ff] via-[#00cc99] to-[#0099ff]"
             >
-              Let’s Hustle Together
-            </Link>
+              <Link
+                href="/contact"
+                className="block px-4 md:px-8 py-3 rounded-full font-semibold 
+                     text-white text-md md:text-lg
+                     bg-transparent
+                    hover:shadow-xl
+                     shadow-lg shadow-[#00cc99]/30 transition-all"
+              >
+                Let’s Hustle Together
+              </Link>
+            </motion.div>
           </motion.div>
         </main>
-         <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-b from-transparent to-black pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-b from-transparent to-black pointer-events-none" />
       </section>
       {/* Hero section end */}
 
