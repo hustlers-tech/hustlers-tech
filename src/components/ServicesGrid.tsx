@@ -45,12 +45,6 @@ const categories: Category[] = [
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptatum nesciunt reprehenderit cumque suscipit odit voluptatem dolorem magni numquam possimus.",
       },
       {
-        name: "UI/UX Design",
-        icon: FaPaintBrush,
-        link: "/",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptatum nesciunt reprehenderit cumque suscipit odit voluptatem dolorem magni numquam possimus.",
-      },
-      {
         name: "E-commerce Development",
         icon: FaShoppingCart,
         link: "/",
@@ -67,6 +61,12 @@ const categories: Category[] = [
   {
     title: "Creative & Content",
     items: [
+      {
+        name: "UI/UX Design",
+        icon: FaPaintBrush,
+        link: "/",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptatum nesciunt reprehenderit cumque suscipit odit voluptatem dolorem magni numquam possimus.",
+      },
       {
         name: "Graphic Designing",
         icon: FaPaintBrush,
@@ -155,18 +155,29 @@ export default function ServicesGrid() {
               return (
                 <motion.li
                   key={item.name}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: i * 0.1, duration: 0.5, ease: "easeOut" }}
+  whileHover={{ scale: 1.03, y: -4, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
+  whileTap={{ scale: 0.97 }}
                 >
-                  <div className="flex flex-col gap-3 p-4 rounded-xl shadow-md bg-white hover:bg-gradient-to-r from-[#0099ff] via-[#00cc99] to-[#0099ff] hover:scale-95 transition group">
+                  <div
+                   className="
+      flex flex-col gap-3 p-4
+      shadow-xl 
+      border border-transparent 
+      [border-image:linear-gradient(to_right,#0099ff,#00cc99,#0099ff)_1] 
+      hover:bg-gradient-to-r hover:from-[#0099ff] hover:via-[#00cc99] hover:to-[#0099ff] 
+      transition group
+    "
+                  >
                     <span className="flex items-center gap-3 text-2xl font-bold">
                       <Icon className="text-blue-600 group-hover:text-white" />
                       <span className="bg-gradient-to-r from-[#00cc99] to-[#0099ff] bg-clip-text text-transparent group-hover:text-white">
                         {item.name}
                       </span>
                     </span>
-                    <p className="text-blue-600 group-hover:text-white text-[12px] md:text-[15px] text-gray-500">
+                    <p className="text-blue-600 text-[12px] md:text-[15px] text-gray-500 group-hover:text-white">
                       {item.desc}
                     </p>
                     <a href={item.link} className="w-fit">

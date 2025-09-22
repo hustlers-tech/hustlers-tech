@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section Start */}
-      <section className="relative w-full min-h-screen flex items-center text-center bg-gradient-to-b from-black/90 to-[#0099ff]/50 p-2 md:p-8">
+      <section className="relative w-full min-h-screen flex items-center text-center bg-gradient-to-b from-black/90 to-[#0099ff]/50 p-2 md:p-8 hero-section">
         <main
           ref={heroRef}
           className="flex flex-col gap-6 px-2 md:px-15 w-full"
@@ -123,13 +123,13 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </main>
-        <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-b from-transparent to-black pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-b from-transparent to-[#000] pointer-events-none" />
       </section>
       {/* Hero section end */}
 
       {/* Services Section start */}
-      <section ref={servicesRef}>
-        <Services />
+      <section>
+        <Services/>
       </section>
     </div>
   );

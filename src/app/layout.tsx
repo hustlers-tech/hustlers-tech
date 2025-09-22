@@ -13,6 +13,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Hustlers Tech",
   description: "We Hustle, You Settle",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
