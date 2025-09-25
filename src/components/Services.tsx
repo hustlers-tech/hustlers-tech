@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ServicesGrid from "./ServicesGrid";
+import { FaArrowRight } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,6 +70,63 @@ const Services = () => {
       </motion.div>
 
       <ServicesGrid />
+
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.4 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+        className="w-full mt-0 py-0 md:py-5 flex flex-col items-center text-center"
+      >
+        <motion.p
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          className="text-white text-xl md:text-4xl font-bold"
+        >
+          Not sure where to start ?
+        </motion.p>
+
+        <motion.p
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          className="text-gray-300 text-base md:text-lg max-w-2xl mt-2 leading-[120%]"
+        >
+          Let&apos;s talk about your goals and build a custom solution just for
+          you.
+        </motion.p>
+
+        <motion.a
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          href="/get-started"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="mt-6 flex px-5 py-2 rounded-full font-semibold 
+                  text-white 
+                  bg-gradient-to-r from-[#0099ff] to-[#00cc99] 
+                  hover:from-[#00cc99] hover:to-[#0099ff] 
+                  shadow-lg shadow-[#00cc99]/30 
+                  transition-all items-center gap-2"
+        >
+          Let&apos;s Hustle Together{" "}
+          <span>
+            <FaArrowRight />
+          </span>
+        </motion.a>
+      </motion.section>
     </motion.main>
   );
 };

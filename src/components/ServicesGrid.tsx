@@ -124,7 +124,7 @@ export default function ServicesGrid() {
   return (
     <section className="py-16 px-0 md:px-8 max-w-6xl mx-auto">
       {/* Tabs */}
-      <div className="flex justify-center mb-8 gap-3 md:gap-6">
+      <div className="flex justify-center mb-8 gap-3 md:gap-6 sticky top-[10%] z-10 md:static bg-black md:bg-transparent">
         {categories.map((category, index) => (
           <button
             key={category.title}
@@ -132,7 +132,7 @@ export default function ServicesGrid() {
             className={`px-4 md:px-6 py-2 md:py-3 rounded-lg md:rounded-full font-semibold md:font-bold transition hover:scale-105 leading-[120%] ${
               activeTab === index
                 ? "bg-gradient-to-r from-[#99ccff] via-[#99ffcc] to-[#99ccff] text-black shadow-lg cursor-pointer"
-                : "bg-gray-200 text-gray-700 hover:bg-gray-300 cursor-pointer"
+                : "bg-white/80 text-gray-700 hover:bg-gray-300 cursor-pointer"
             }`}
           >
             {category.title}
@@ -155,33 +155,41 @@ export default function ServicesGrid() {
               return (
                 <motion.li
                   key={item.name}
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: i * 0.1, duration: 0.5, ease: "easeOut" }}
-  whileHover={{ scale: 1.03, y: -4, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
-  whileTap={{ scale: 0.97 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: i * 0.1,
+                    duration: 0.5,
+                    ease: "easeOut",
+                  }}
+                  whileHover={{
+                    // scale: 1.03,
+                    y: -4,
+                    boxShadow: "0px 10px 20px rgba(0,0,0,0.1)",
+                  }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   <div
-                   className="
+                    className="
       flex flex-col gap-3 p-4
       shadow-xl 
       border border-transparent 
       [border-image:linear-gradient(to_right,#0099ff,#00cc99,#0099ff)_1] 
-      hover:bg-gradient-to-r hover:from-[#0099ff] hover:via-[#00cc99] hover:to-[#0099ff] 
+      hover:bg-gradient-to-r hover:bg-gradient-to-r from-[#0099ff] to-[#00cc99] 
       transition group
     "
                   >
                     <span className="flex items-center gap-3 text-2xl font-bold">
                       <Icon className="text-blue-600 group-hover:text-white" />
-                      <span className="bg-gradient-to-r from-[#00cc99] to-[#0099ff] bg-clip-text text-transparent group-hover:text-white">
+                      <span className="bg-gradient-to-r from-[#00cc99] to-[#0099ff] bg-clip-text text-transparent group-hover:text-white leading-[100%]">
                         {item.name}
                       </span>
                     </span>
-                    <p className="text-blue-600 text-[12px] md:text-[15px] text-gray-500 group-hover:text-white">
+                    <p className="text-white/90 text-[12px] md:text-[15px] text-gray-500 group-hover:text-white">
                       {item.desc}
                     </p>
                     <a href={item.link} className="w-fit">
-                      <button className="text-blue-600 flex items-center gap-1 group-hover:bg-white rounded-lg px-2 py-1 w-fit cursor-pointer">
+                      <button className="text-blue-600 flex items-center bg-white text-sm md:text-md md:bg-transparent gap-1 group-hover:bg-white rounded-lg px-2 py-1 w-fit cursor-pointer">
                         Let&apos;s Start
                         <span>
                           <FaArrowRight />
