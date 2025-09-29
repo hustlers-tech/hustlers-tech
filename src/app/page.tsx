@@ -65,7 +65,7 @@ export default function Home() {
               className="flex flex-col gap-6 px-2 md:px-15 w-full"
             >
               <motion.h1
-                className="text-[40px] md:text-[100px] font-bold text-white leading-[110%]"
+                className="text-[35px] md:text-[80px] font-bold text-white leading-[110%]"
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
@@ -124,7 +124,7 @@ export default function Home() {
                 >
                   <Link
                     href="/contact"
-                    className="flex items-center gap-2 px-4 md:px-8 py-3 rounded-full font-semibold 
+                    className="flex items-center gap-2 px-4 md:px-5 py-2 rounded-full font-semibold 
                       text-white text-md md:text-lg
                       bg-transparent
                       hover:shadow-xl
