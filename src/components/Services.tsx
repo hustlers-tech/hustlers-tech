@@ -103,7 +103,7 @@ const Services = () => {
           className="text-gray-300 text-base md:text-lg max-w-2xl mt-2 leading-[120%]"
         >
           Let&apos;s talk about your goals and build a custom solution just for
-          you.
+          you
         </motion.p>
 
         <motion.a
