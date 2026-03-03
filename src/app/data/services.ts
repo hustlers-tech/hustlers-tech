@@ -46,6 +46,6 @@ export const services: Service[] = [
     title: "Graphic & Visual Design",
     description:
       "Impactful graphics, brand creatives, ad designs, and marketing visuals crafted to capture attention and communicate your message powerfully.",
-    image: "/images/graphicdesign.jpg",
+    image: "/images/graphicService.webp",
   },
 ];
