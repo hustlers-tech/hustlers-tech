@@ -7,7 +7,7 @@ import {motion} from "framer-motion"
 export default function ServicesSection() {
   return (
     <>
-     <div className="relative text-center py-10 overflow-hidden">
+     <div className="relative text-center py-10 overflow-hidden" id="services">
         <div
           className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 mb-5"
         >

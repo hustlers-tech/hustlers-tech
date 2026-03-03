@@ -1,6 +1,7 @@
 "use client";
 import { ArrowRight, Zap } from "lucide-react";
 import { motion, Variants } from "framer-motion";
+import Link from "next/link";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -100,9 +101,9 @@ export default function Hero() {
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </button>
 
-          <button className="inline-flex items-center gap-2 rounded-lg border border-border px-8 py-4 font-heading font-semibold text-foreground transition-all hover:border-primary/50 hover:bg-primary/5 hover:scale-105">
+          <Link href="#services" className="inline-flex items-center gap-2 rounded-lg border border-border px-8 py-4 font-heading font-semibold text-foreground transition-all hover:border-primary/50 hover:bg-primary/5 hover:scale-105">
             View Our Services
-          </button>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

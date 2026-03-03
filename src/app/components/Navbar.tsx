@@ -12,7 +12,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
- useEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 768);
     };
@@ -33,11 +33,28 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Work", href: "#portfolio" },
-    { name: "Process", href: "#process" },
-    { name: "Contact", href: "#contact" },
+    { name: "About Us", id: "about" },
+    { name: "Services", id: "services" },
+    { name: "Process", id: "process" },
+    { name: "Contact", id: "contact" },
   ];
+
+  const handleScrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const navbarOffset = 100;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition =
+      elementPosition + window.pageYOffset - navbarOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+
+    setMobileOpen(false);
+  };
 
   return (
     <motion.nav
@@ -65,7 +82,6 @@ export default function Navbar() {
             : "bg-transparent px-5 py-6"
         }`}
       >
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/HustlersTech_logo.png"
@@ -79,14 +95,14 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.name}
-              href={link.href}
-              className="relative group text-white/70 hover:text-white transition"
+              onClick={() => handleScrollTo(link.id)}
+              className="relative group text-white/70 hover:text-white transition cursor-pointer"
             >
               {link.name}
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#2596be] transition-all duration-300 group-hover:w-full" />
-            </a>
+            </button>
           ))}
 
           {/* CTA */}
@@ -123,14 +139,13 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-white/70 hover:text-white transition"
+                  onClick={() => handleScrollTo(link.id)}
+                  className="text-white/70 hover:text-white transition text-left"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
 
               <button className="bg-[#2596be] py-3 rounded-xl shadow-[0_0_20px_rgba(37,150,190,0.4)]">
