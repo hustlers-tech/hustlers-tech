@@ -17,7 +17,7 @@ const services = [
 export default function LeadForm() {
 
   const [formData,setFormData] = useState({
-    name:"", email:"", phone:"", company:"", service:"", budget:"", message:""
+    name:"", email:"", phone:"", service:"", message:""
   })
 
   const [errors,setErrors] = useState<any>({})
@@ -59,8 +59,8 @@ export default function LeadForm() {
     if(!formData.service)
       err.service = "Select a service"
 
-    if(!formData.budget)
-      err.budget = "Select your budget"
+    // if(!formData.budget)
+    //   err.budget = "Select your budget"
 
     setErrors(err)
 
@@ -82,7 +82,7 @@ export default function LeadForm() {
       setSuccess(true)
 
       setFormData({
-        name:"", email:"", phone:"", company:"", service:"", budget:"", message:""
+        name:"", email:"", phone:"", service:"", message:""
       })
 
     }catch(err){
@@ -198,12 +198,12 @@ className={input}
 {errors.phone && <p className={error}>{errors.phone}</p>}
 </div>
 
-<input
+{/* <input
 placeholder="Company / Brand"
 value={formData.company}
 onChange={update("company")}
 className={input}
-/>
+/> */}
 
 <div>
 <select
@@ -227,7 +227,7 @@ Service Needed
 {errors.service && <p className={error}>{errors.service}</p>}
 </div>
 
-<div>
+{/* <div>
 <select
 value={formData.budget}
 onChange={update("budget")}
@@ -245,7 +245,7 @@ Monthly Budget
 </select>
 
 {errors.budget && <p className={error}>{errors.budget}</p>}
-</div>
+</div> */}
 
 </div>
 
