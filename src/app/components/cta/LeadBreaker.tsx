@@ -7,7 +7,7 @@ export default function LuxuryLeadBreaker() {
   const router = useRouter();
 
   return (
-    <section className="relative py-40 bg-neutral-700 text-neutral-900 overflow-hidden">
+    <section className="relative py-40 bg-neutral-700 text-neutral-900 overflow-hidden" id="contact">
 
       {/* Soft Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-300 to-white" />
@@ -61,8 +61,8 @@ export default function LuxuryLeadBreaker() {
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 120 }}
-          onClick={() => router.push("/enquiry")}
-          className="mt-12 px-10 py-4 border border-neutral-300 rounded-full text-lg tracking-wide hover:border-primary hover:text-primary transition-all duration-300 bg-white shadow-sm"
+          onClick={() => router.push("/contact")}
+          className="mt-12 px-10 py-4 border border-neutral-300 rounded-full text-lg tracking-wide hover:border-primary hover:text-primary transition-all duration-300 bg-white shadow-sm cursor-pointer"
         >
           Start a Conversation →
         </motion.button>

@@ -62,14 +62,14 @@ export default function WhatsappSticky() {
           >
 
 
-            <div className="bg-green-500 text-white p-4 flex justify-between items-center">
+            <div className="bg-primary text-white p-4 flex justify-between items-center">
 
               <div className="flex gap-3 items-center">
 
                 <Image
                   src={"/images/H_logo.jpeg"}
-                  width={30}
-                  height={30}
+                  width={35}
+                  height={35}
                   alt="logo_icon"
                   className="rounded-full"
                 />

@@ -6,11 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleResize = () => {
@@ -107,6 +109,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <motion.button
+            onClick={()=>router.push("/contact")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-5 py-2 rounded-xl bg-[#2596be] text-white shadow-[0_0_20px_rgba(37,150,190,0.5)] hover:shadow-[0_0_30px_rgba(37,150,190,0.7)] transition-all duration-300"
@@ -148,7 +151,7 @@ export default function Navbar() {
                 </button>
               ))}
 
-              <button className="bg-[#2596be] py-3 rounded-xl shadow-[0_0_20px_rgba(37,150,190,0.4)]">
+              <button className="bg-[#2596be] py-3 rounded-xl shadow-[0_0_20px_rgba(37,150,190,0.4)]" onClick={()=>router.push("/contact")}>
                 Let’s Talk
               </button>
             </div>

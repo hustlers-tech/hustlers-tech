@@ -2,6 +2,7 @@
 import { ArrowRight, Zap } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -25,6 +26,7 @@ const itemVariants: Variants = {
 };
 
 export default function Hero() {
+const router = useRouter();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Background effects */}
@@ -96,7 +98,7 @@ export default function Hero() {
           variants={itemVariants}
           className="mt-12 flex flex-wrap justify-center gap-4"
         >
-          <button className="group relative inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 font-heading font-semibold text-primary-foreground transition-all hover:bg-primary-dark hover:shadow-[var(--shadow-glow)] hover:scale-105">
+          <button onClick={()=>router.push("/contact")} className="group relative inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 font-heading font-semibold text-primary-foreground transition-all hover:bg-primary-dark hover:shadow-[var(--shadow-glow)] hover:scale-105 cursor-pointer">
             Start Your Growth
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </button>
