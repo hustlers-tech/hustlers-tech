@@ -259,7 +259,7 @@ className={input+" mb-6 resize-none"}
 
 <button
 disabled={loading}
-className="w-full bg-gradient-to-r from-primary to-blue-500 text-white font-semibold text-lg py-4 rounded-xl hover:scale-[1.02] transition flex items-center justify-center gap-2"
+className="w-full bg-gradient-to-r from-primary to-blue-500 text-white font-semibold text-lg py-4 rounded-xl hover:scale-[1.02] transition flex items-center justify-center gap-2 cursor-pointer"
 >
 
 {loading

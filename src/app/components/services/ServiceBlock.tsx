@@ -6,77 +6,86 @@ import { Service } from "@/app/data/services";
 
 interface Props {
   service: Service;
-  reverse?: boolean;
+  index: number;
 }
 
-export default function ServiceBlock({ service, reverse }: Props) {
+export default function ServiceBlock({ service, index }: Props) {
+
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    offset: ["start end", "end start"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const y = useTransform(scrollYProgress,[0,1],["0%","15%"]);
 
   return (
-    <section
+
+    <motion.div
       ref={ref}
-      className="relative py-20 md:h-[80vh] md:flex md:items-center overflow-hidden"
+      className="sticky top-30 mx-5 md:mx-10"
+      initial={{opacity:0, y:120}}
+      whileInView={{opacity:1, y:0}}
+      transition={{duration:0.8}}
+      viewport={{once:true}}
     >
-      {/* Glow Background */}
-      <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-        <div className="w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full" />
-      </div>
 
-      <div
-        className={`container mx-auto px-6 md:px-20 grid lg:grid-cols-2 gap-20 items-center relative z-10 ${
-          reverse ? "lg:[&>*:first-child]:order-2" : ""
-        }`}
-      >
+      <div className="relative bg-[#0b0f18] border border-white/5 rounded-3xl p-10 md:p-14 grid lg:grid-cols-2 gap-12 items-center shadow-2xl h-auto md:h-150">
+
+       <img
+          src={service.image}
+          alt={service.title}
+          className="absolute inset-0 w-full h-full object-cover hidden md:block rounded-3xl"
+        />
+
+        {/* DARK OVERLAY */}
+
+        {/* <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px] hidden md:block rounded-3xl" /> */}
+        {/* BIG BACKGROUND NUMBER */}
+
+        <span className="absolute -top-15 left-0 text-[200px] font-bold text-white/5 select-none pointer-events-none">
+          {service.number}
+        </span>
+
         {/* TEXT */}
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative"
-        >
-          <span className="absolute -top-24 -left-6 text-[180px] font-bold text-white/5 select-none">
-            {service.number}
-          </span>
 
-          <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+        <div className="relative z-10">
+
+          <h3 className="text-4xl md:text-5xl font-bold leading-tight">
             {service.title}
-          </h2>
+          </h3>
 
-          <p className="mt-6 text-muted-foreground max-w-lg text-lg">
+          <p className="mt-6 text-gray-400 text-lg max-w-md">
             {service.description}
           </p>
 
-          <button className="mt-8 px-8 py-4 bg-primary text-primary-foreground rounded-xl hover:scale-105 transition">
+          <button className="mt-8 px-7 py-3 bg-primary text-primary-foreground rounded-xl hover:scale-105 transition">
             Explore Service
           </button>
-        </motion.div>
+
+        </div>
 
         {/* IMAGE */}
-        <motion.div
-          className="hidden md:block"
-          style={{ y }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
+
+        {/* <motion.div
+          style={{y}}
+          className="overflow-hidden rounded-2xl hidden md:flex border"
         >
+
           <motion.img
             src={service.image}
             alt={service.title}
-            className="rounded-2xl shadow-2xl w-300 h-100"
-            whileHover={{ rotate: 1.5, scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 120 }}
+            className="w-full h-[300px] object-cover"
+            whileHover={{scale:1.05}}
+            transition={{duration:0.4}}
           />
-        </motion.div>
+
+        </motion.div> */}
+
       </div>
-    </section>
+
+    </motion.div>
+
   );
 }

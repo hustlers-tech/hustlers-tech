@@ -31,11 +31,11 @@ export default function ServicesSection() {
     </div>
     <div className="bg-background text-foreground">
        
-      {services.map((service, index) => (
+      {services.map((service, i) => (
         <ServiceBlock
           key={service.number}
-          service={service}
-          reverse={index % 2 !== 0}
+            service={service}
+            index={i}
         />
       ))}
     </div>
