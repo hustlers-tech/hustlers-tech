@@ -13,3 +13,20 @@
 html{
   scroll-behavior: smooth;
 }
+
+@keyframes tech-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-tech-scroll {
+  animation: tech-scroll 25s linear infinite;
+}
+
+/* .animate-tech-scroll:hover {
+  animation-play-state: paused;
+} */
