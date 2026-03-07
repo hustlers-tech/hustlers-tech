@@ -6,12 +6,12 @@ import { submitLead } from "@/lib/submitLead"
 import { motion, AnimatePresence } from "framer-motion"
 
 const services = [
-  "SEO & Content",
+  "SEO",
   "Paid Ads (PPC)",
   "Social Media",
   "Web Development",
-  "Branding",
-  "Email Marketing",
+  "Graphic Designing",
+  "Content Marketing",
 ]
 
 export default function LeadForm() {

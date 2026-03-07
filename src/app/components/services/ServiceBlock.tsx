@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Service } from "@/app/data/services";
+import { useRouter } from "next/navigation";
 
 interface Props {
   service: Service;
@@ -12,6 +13,7 @@ interface Props {
 export default function ServiceBlock({ service, index }: Props) {
 
   const ref = useRef(null);
+  const router = useRouter();
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -60,8 +62,8 @@ export default function ServiceBlock({ service, index }: Props) {
             {service.description}
           </p>
 
-          <button className="mt-8 px-7 py-3 bg-primary text-primary-foreground rounded-xl hover:scale-105 transition">
-            Explore Service
+          <button onClick={()=>router.push(`${service.ctaLink}`)} className="mt-8 px-7 py-3 bg-primary text-primary-foreground rounded-xl hover:scale-105 transition cursor-pointer">
+            Read More
           </button>
 
         </div>
