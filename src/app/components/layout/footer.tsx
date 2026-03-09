@@ -58,10 +58,12 @@ export default function Footer() {
             <FooterTitle>Services</FooterTitle>
             <FooterLinks
               links={[
-                { name: "Brand Strategy", href: "#" },
-                { name: "Web Development", href: "#" },
-                { name: "Performance Marketing", href: "#" },
-                { name: "Creative Design", href: "#" },
+                { name: "Search Engine Optimization (SEO)", href: "/search-engine-optimization" },
+                { name: "Web Development", href: "/web-development" },
+                { name: "Social Media Marketing", href: "/social-media" },
+                { name: "PPC service (Paid Ads)", href: "#" },
+                { name: "Graphic Design", href: "#" },
+                { name: "Content Marketing", href: "#" },
               ]}
             />
           </div>

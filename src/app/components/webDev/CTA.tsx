@@ -18,7 +18,7 @@ const CTA = ({
   const router = useRouter();
 
   return (
-    <div className="py-36 relative">
+    <div className="py-20 relative">
 
       {/* glow background */}
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none">

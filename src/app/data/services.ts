@@ -37,7 +37,7 @@ export const services: Service[] = [
     description:
       "Content-driven strategies that grow communities, increase engagement, and turn followers into loyal brand advocates.",
     image: "/images/sm_bg.webp",
-    ctaLink: ""
+    ctaLink: "/social-media"
   },
   {
     number: "05",
