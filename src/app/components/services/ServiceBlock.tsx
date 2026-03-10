@@ -43,7 +43,7 @@ export default function ServiceBlock({ service, index }: Props) {
 
         {/* DARK OVERLAY */}
 
-        {/* <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px] hidden md:block rounded-3xl" /> */}
+        <div className="absolute inset-0 bg-black/70 hidden md:block rounded-3xl" />
         {/* BIG BACKGROUND NUMBER */}
 
         <span className="absolute -top-15 left-0 text-[200px] font-bold text-white/5 select-none pointer-events-none">

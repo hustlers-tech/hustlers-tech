@@ -41,7 +41,8 @@ export default function Navbar() {
   const navLinks = [
     { name: "About Us", id: "about" },
     { name: "Process", id: "process" },
-    { name: "Contact", id: "contact" },
+    { name: "FAQs", id: "faqs" },
+    { name: "Blog", id: "blogs" },
   ];
 
   const services = [
@@ -51,8 +52,8 @@ export default function Navbar() {
       link: "/search-engine-optimization",
     },
     { name: "Social Media ", link: "/social-media" },
-    { name: "Paid Ads (PPC)", link: "" },
-    { name: "Graphic Design", link: "" },
+    { name: "Paid Ads (PPC)", link: "/paid-ads" },
+    { name: "Graphic Design", link: "/graphic-design" },
     { name: "Content Marketing", link: "" },
   ];
 
@@ -81,7 +82,7 @@ export default function Navbar() {
       animate={
         isDesktop
           ? {
-              width: scrolled ? "50%" : "80%",
+              width: scrolled ? "60%" : "80%",
               y: scrolled ? 20 : 0,
               borderRadius: scrolled ? "20px" : "0px",
             }

@@ -61,8 +61,8 @@ export default function Footer() {
                 { name: "Search Engine Optimization (SEO)", href: "/search-engine-optimization" },
                 { name: "Web Development", href: "/web-development" },
                 { name: "Social Media Marketing", href: "/social-media" },
-                { name: "PPC service (Paid Ads)", href: "#" },
-                { name: "Graphic Design", href: "#" },
+                { name: "PPC service (Paid Ads)", href: "/paid-ads" },
+                { name: "Graphic Design", href: "/graphic-design" },
                 { name: "Content Marketing", href: "#" },
               ]}
             />

@@ -14,7 +14,7 @@ export default function WhatsappSticky() {
   const [error, setError] = useState("");
   const [unread, setUnread] = useState(true);
 
-  const phone = "919354040527";
+  const phone = "9354040527";
 
   const handleOpen = () => {
     setOpen(!open);
@@ -135,9 +135,10 @@ export default function WhatsappSticky() {
                   >
                     <option value="">Select service</option>
                     <option>Website Development</option>
-                    <option>UI/UX Design</option>
-                    <option>Branding</option>
-                    <option>Growth Marketing</option>
+                    <option>Search Engine Optimization (SEO)</option>
+                    <option>Social Media</option>
+                    <option>Content Marketing</option>
+                    <option>PPC (Paid Ads)</option>
                   </select>
 
                   <button
