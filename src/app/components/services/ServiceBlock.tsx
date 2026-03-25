@@ -58,7 +58,7 @@ export default function ServiceBlock({ service, index }: Props) {
             {service.title}
           </h3>
 
-          <p className="mt-6 text-gray-400 text-lg max-w-md">
+          <p className="mt-6 text-gray-400 text-lg max-w-lg">
             {service.description}
           </p>
 

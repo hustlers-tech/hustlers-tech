@@ -89,8 +89,7 @@ const router = useRouter();
           variants={itemVariants}
           className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
         >
-          Hustlers Tech crafts bold digital strategies that turn startups into
-          empires and brands into movements. Ready to dominate?
+          With innovative digital strategies, we help startups become powerhouses and brands become movements. Let's do battle.
         </motion.p>
 
         {/* CTA Buttons */}

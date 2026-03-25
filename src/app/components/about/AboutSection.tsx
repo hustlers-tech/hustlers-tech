@@ -61,20 +61,15 @@ export default function AboutSection() {
           className="max-w-4xl mx-auto text-center text-gray-300 text-lg leading-relaxed space-y-6"
         >
           <p>
-            HustlersTech is a young, driven startup built by a team of
-            passionate developers, designers, writers, and marketers who
-            believe in executing fast, building smart, and creating with purpose.
+            Hustlers Tech stands apart as more than just another digital team - we combine creativity with strategy to help brands stand out and expand faster.
           </p>
 
           <p>
-            We started with a simple idea: to give startups, creators, and
-            businesses a reliable one-stop team for everything digital — from
-            websites to branding, apps to content, and marketing that actually works.
+            From developing high-performing websites and branding initiatives to data-driven marketing initiatives, our focus lies on what moves the needle.
           </p>
 
           <p>
-            Whether you're launching your first product or scaling your brand,
-            we bring the hustle, the skill, and the energy to turn your ideas into reality.
+            No matter the stage you're starting from or where your ambitions take you, we provide the clarity, speed, and execution needed to turn ambitions into real growth.
           </p>
         </motion.div>
 

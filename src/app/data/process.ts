@@ -9,24 +9,24 @@ export const processSteps: ProcessStepType[] = [
     number: "01",
     title: "Discovery & Strategy",
     description:
-      "We deeply understand your brand, audience, and goals to build a strategic foundation for growth.",
+      "To develop an effective plan for growth, we start by understanding your business, your audience and what goals you wish to pursue.",
   },
   {
     number: "02",
     title: "Creative Planning",
     description:
-      "We craft a data-backed roadmap combining branding, content, and performance marketing.",
+      "Next, we take an integrated approach to creative planning: branding, content, and marketing--ensuring all parts fit seamlessly together in the right manner.",
   },
   {
     number: "03",
     title: "Execution & Launch",
     description:
-      "Our team executes with precision — from design and development to paid campaigns.",
+      "Our experts make everything come alive, from design and development through campaign launches. They make sure everything runs seamlessly.",
   },
   {
     number: "04",
     title: "Optimization & Scale",
     description:
-      "Continuous analysis, A/B testing, and refinement to maximize ROI and scale results.",
+      "Our focus on optimization & scaling involves improving what is working, testing new ideas, and helping your business expand faster over time.",
   },
 ];
