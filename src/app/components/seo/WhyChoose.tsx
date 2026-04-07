@@ -31,15 +31,16 @@ const WhyChoose = () => {
       </div>
 
               <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-                We don't chase vanity metrics. Every strategy is built to drive revenue, not just rankings — measurable ROI from day one.
+                We focus on real business growth, not vanity metrics. That’s what makes us a trusted SEO services company and preferred SEO agency in India.
               </p>
               <ul className="mt-8 space-y-4">
                 {[
-                  "200+ keywords ranked on page one for our clients",
-                  "Average 280% increase in organic traffic within 6 months",
-                  "White-hat only — no shortcuts, no penalties",
-                  "Dedicated SEO specialist assigned to your account",
-                  "Monthly strategy calls with transparent reporting",
+                  "200+ keywords ranked on page one across industries",
+                  "Recognized among the best SEO services in Delhi",
+                  "280% average growth using our professional SEO services",
+                  "Ethical, white-hat practices for long-term success",
+                  "Dedicated expert for every project",
+                  "Transparent reporting with actionable insights",
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 group">
                     <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />

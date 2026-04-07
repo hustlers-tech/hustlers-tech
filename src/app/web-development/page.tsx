@@ -15,23 +15,19 @@ import CTA from "../components/webDev/CTA";
 const webDevFaqs = [
   {
     q: "Which technologies do you use?",
-    a: "We build with Next.js, React, Tailwind and modern scalable stacks.",
+    a: "We use modern frameworks and tools to deliver scalable solutions as a top website development agency in India.",
   },
   {
-    q: "Is the website mobile optimized?",
-    a: "Yes, every website is fully responsive.",
+    q: "Do you provide mobile-optimized websites?",
+    a: "Yes, every project includes responsive website design to ensure seamless performance across all devices.",
   },
   {
-    q: "Is the website mobile optimized?",
-    a: "Yes, every website is fully responsive.",
+    q: "What is the website development cost in India?",
+    a: "The website development cost in India depends on features, design, and complexity. We offer flexible pricing tailored to your needs.",
   },
   {
-    q: "Is the website mobile optimized?",
-    a: "Yes, every website is fully responsive.",
-  },
-  {
-    q: "Is the website mobile optimized?",
-    a: "Yes, every website is fully responsive.",
+    q: "Can I find a website developer near me for support?",
+    a: "Absolutely. If you're searching for a website developer near me in Delhi, our team is always available for quick support and consultation.",
   },
 ];
 
@@ -39,22 +35,22 @@ const webDevProcess = [
   {
     step: "01",
     title: "Requirement Analysis",
-    description: "Understanding business goals and technical needs.",
+    description: "We begin by understanding your business goals, audience, and technical needs.",
   },
   {
     step: "02",
     title: "UI/UX Design",
-    description: "Creating intuitive and modern interfaces.",
+    description: "Our team focuses on modern website design that is intuitive, responsive, and conversion-driven.",
   },
   {
     step: "03",
     title: "Development",
-    description: "Building scalable applications with Next.js.",
+    description: "As a trusted website development company in India, we build fast, scalable, and SEO-friendly websites.",
   },
   {
     step: "04",
-    title: "Deployment",
-    description: "Launch with performance monitoring.",
+    title: "Deployment & Optimization",
+    description: "We launch your website with full testing, speed optimization, and performance tracking, because great website development services in India don’t stop at delivery.",
   },
 ];
 
@@ -95,9 +91,9 @@ export default function WebDevelopment() {
               transition={{ delay: 0.2 }}
               className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05]"
             >
-              We Build Websites That{" "}
+              Your Growth Starts{" "}
               <span className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
-                Convert & Scale
+                With a Better Website
               </span>
             </motion.h1>
 
@@ -107,9 +103,7 @@ export default function WebDevelopment() {
               transition={{ delay: 0.35 }}
               className="mt-6 text-lg lg:text-xl text-muted-foreground leading-relaxed"
             >
-              From blazing-fast landing pages to complex web applications — we
-              engineer digital experiences that captivate users and drive
-              measurable business growth.
+              From high-converting landing pages to full-scale websites, our web development services focus on performance, user experience, and growth, helping your business stand out and rank higher.
             </motion.p>
 
             <motion.div
@@ -137,14 +131,14 @@ export default function WebDevelopment() {
         title="Our"
         highlight="Process"
         steps={webDevProcess}
-        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae in inventore fugit dolorem iure, quasi ut ab facere debitis cupiditate."
+        description="As a leading website development company in Delhi, our process is built to deliver performance, scalability, and seamless user experience."
       />
       <WhyChoose />
       <FaqSection faqs={webDevFaqs} showViewAll={false} />
       <CTA
         title="Ready to Build Something Exceptional?"
-        description="Let’s create a high-performance website that grows your business."
-        buttonText="Get Free Consultation"
+        description="Turn your ideas into a powerful digital experience with expert website development services."
+        buttonText="Get Your Free Consultation Now"
 />
     </section>
   );

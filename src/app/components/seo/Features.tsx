@@ -2,12 +2,42 @@ import {Search, TrendingUp, FileText, Link2, BarChart3, Target } from "lucide-re
 import {motion} from "framer-motion"
 
 const features = [
-  { icon: Search, title: "Keyword Research", description: "Deep-dive keyword analysis to uncover high-intent, low-competition terms that drive qualified organic traffic." },
-  { icon: FileText, title: "On-Page SEO", description: "Optimized meta tags, headings, schema markup, and content structure for maximum search engine visibility." },
-  { icon: Link2, title: "Link Building", description: "Strategic outreach and white-hat backlink acquisition from authoritative, relevant domains." },
-  { icon: TrendingUp, title: "Technical SEO", description: "Site speed optimization, crawlability fixes, Core Web Vitals, and structured data implementation." },
-  { icon: BarChart3, title: "Analytics & Reporting", description: "Transparent monthly reports with actionable insights, ranking progress, and ROI tracking." },
-  { icon: Target, title: "Local SEO", description: "Google Business Profile optimization, local citations, and geo-targeted strategies for regional dominance." },
+  {
+    icon: Search,
+    title: "Keyword Research",
+    description:
+      "We uncover high-intent opportunities through deep research, ensuring your SEO service for business targets the right audience with maximum ROI.",
+  },
+  {
+    icon: FileText,
+    title: "On-Page SEO",
+    description:
+      "From meta tags to structured content, our professional SEO services ensure your website is fully optimized for search engines and users.",
+  },
+  {
+    icon: Link2,
+    title: "Link Building",
+    description:
+      "Our white-hat approach helps us stand out as a reliable SEO services company India, building authority through high-quality backlinks.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Technical SEO",
+    description:
+      "We fix what slows you down, from site speed to indexing and delivering seamless performance expected from the best SEO services in India.",
+  },
+  {
+    icon: BarChart3,
+    title: "Analytics & Reporting",
+    description:
+      "Transparent tracking and insights are part of our SEO consulting services, helping you measure growth and make smarter decisions.",
+  },
+  {
+    icon: Target,
+    title: "Local SEO",
+    description:
+      "Dominate your area with targeted local SEO services in Delhi and beyond. Perfect for businesses searching for affordable local SEO services that actually convert.",
+  },
 ];
 
 
@@ -46,7 +76,7 @@ const Features = () => {
           className="relative text-md tracking-tight px-4 pb-10"
         >
           <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae in inventore fugit dolorem iure, quasi ut ab facere debitis cupiditate.
+            As a results-driven SEO service provider, we offer end-to-end SEO services in India tailored for businesses of all sizes, from startups to enterprise brands.
           </span>
         </motion.p>
       </div>

@@ -66,9 +66,9 @@ const Capabilities = () => {
           viewport={{ once: true }}
           className="relative text-md tracking-tight px-4 pb-10"
         >
-          <span>
+          {/* <span>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae in inventore fugit dolorem iure, quasi ut ab facere debitis cupiditate.
-          </span>
+          </span> */}
         </motion.p>
       </div>
         <div className="absolute top-20 left-0 w-72 h-72 bg-primary/50 rounded-full blur-[120px]" />

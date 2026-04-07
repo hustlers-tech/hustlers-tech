@@ -77,7 +77,7 @@ const OurProcess = ({
 
             <div key={item.step} className="relative flex items-center">
 
-              <div className="process-step relative w-full rounded-2xl border border-border/40 bg-card/30 backdrop-blur-md p-8 text-center group hover:border-primary/30 transition-all duration-500">
+              <div className="process-step h-full relative w-full rounded-2xl border border-border/40 bg-card/30 backdrop-blur-md p-8 text-center group hover:border-primary/30 transition-all duration-500">
 
                 <span className="font-heading text-6xl font-bold bg-gradient-to-b from-primary/20 to-transparent bg-clip-text text-transparent">
                   {item.step}

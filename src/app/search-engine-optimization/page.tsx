@@ -11,45 +11,45 @@ const seoProcess = [
   {
     step: "01",
     title: "SEO Audit",
-    description: "Comprehensive analysis of your site's technical health, content gaps, and competitive landscape.",
+    description: "We begin with a deep analysis of your website, identifying gaps and opportunities, a key part of our SEO services.",
   },
   {
     step: "02",
     title: "Strategy",
-    description: "Custom SEO roadmap built around your goals, target keywords, and market opportunity.",
+    description: "Custom roadmap built around your goals, whether you need small business SEO services or advanced ecommerce SEO services.",
   },
   {
     step: "03",
     title: "Execution",
-    description: "On-page optimization, content creation, link building, and technical fixes — all working in sync.",
+    description: "Our team implements everything; content, technical fixes, and backlinks, delivering full-scale SEO services India.",
   },
   {
     step: "04",
     title: "Monitor & Scale",
-    description: "Ongoing tracking, A/B testing, and iterative improvements to compound your organic growth.",
+    description: "Continuous optimization, tracking, and improvements to ensure long-term growth with the best SEO services.",
   },
 ];
 
 const seoFaqs = [
   {
-    q: "Which technologies do you use?",
-    a: "We build with Next.js, React, Tailwind and modern scalable stacks.",
+    q: "What SEO services do you offer?",
+    a: " We provide complete SEO services, including technical SEO, content optimization, link building, and local SEO services.",
   },
   {
-    q: "Is the website mobile optimized?",
-    a: "Yes, every website is fully responsive.",
+    q: "Do you offer SEO services in Delhi?",
+    a: "Yes, we specialize in SEO services in Delhi, helping local businesses rank higher and attract quality leads.",
   },
   {
-    q: "Is the website mobile optimized?",
-    a: "Yes, every website is fully responsive.",
+    q: "Are your SEO services affordable?",
+    a: "We offer affordable local SEO services and customized packages depending on your business size and goals.",
   },
   {
-    q: "Is the website mobile optimized?",
-    a: "Yes, every website is fully responsive.",
+    q: "Do you provide ecommerce SEO services?",
+    a: "Absolutely. We deliver some of the best ecommerce SEO services in India, focused on increasing traffic and conversions.",
   },
   {
-    q: "Is the website mobile optimized?",
-    a: "Yes, every website is fully responsive.",
+    q: "Can I find SEO services near me for support?",
+    a: "Yes, if you’re searching for SEO services near me, our Delhi-based team ensures quick support and personalized consultation.",
   },
 ];
 
@@ -101,7 +101,7 @@ const Seo = () => {
               transition={{ delay: 0.35 }}
               className="mt-6 text-lg lg:text-xl text-muted-foreground leading-relaxed"
             >
-              Data-driven SEO strategies that put your brand in front of the right audience — turning organic search into your most powerful growth channel.
+              Drive consistent growth with professional SEO services designed to put your brand exactly where it matters, on top of search results.
             </motion.p>
 
             <motion.div
@@ -128,13 +128,13 @@ const Seo = () => {
         title="Our SEO"
         highlight="Process"
         steps={seoProcess}
-        description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae in inventore fugit dolorem iure, quasi ut ab facere debitis cupiditate."
+        description="Our structured approach ensures consistent growth, making us one of the best SEO services in Delhi for scalable results."
       />
       <WhyChoose/>
-      <FaqSection faqs={seoFaqs} showViewAll={false} />
+      <FaqSection faqs={seoFaqs} title="Questions Before You" highlight="Invest in SEO" showViewAll={false} />
       <CTA
         title="Ready to Rank #1?"
-        description="Get a free, no-obligation SEO audit and discover exactly how much organic traffic you're leaving on the table."
+        description="Partner with a performance-driven SEO services company India and unlock the true potential of organic growth."
         buttonText="Claim Your Free Audit"
 />
     </section>

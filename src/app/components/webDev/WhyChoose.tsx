@@ -31,15 +31,16 @@ const WhyChoose = () => {
       </div>
 
               <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-                We don't just write code — we craft competitive advantages. Every pixel, every line, every interaction is designed to make your business unstoppable.
+                We’re not just another <strong>website development company</strong>, we’re your growth partner. From startups to enterprises, brands trust us when searching for the <strong>best website development company in India.</strong>
               </p>
               <ul className="mt-8 space-y-4">
                 {[
-                  "100+ websites shipped across 15+ industries",
-                  "Average 3x improvement in page load speed",
-                  "98% client satisfaction rate",
-                  "Dedicated team with 24/7 support",
-                  "Transparent pricing — no hidden fees",
+                  "100+ high-performing websites delivered across industries",
+                  "Recognized as a reliable website development company in Delhi",
+                  "Up to 3x faster performance compared to traditional builds",
+                  "98% client satisfaction rate across website development services",
+                  "Dedicated support from experienced website developers",
+                  "Transparent pricing with clarity on website development cost in India",
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 group">
                     <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
