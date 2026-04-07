@@ -137,6 +137,7 @@ export default function WhatsappSticky() {
                     <option>Website Development</option>
                     <option>Search Engine Optimization (SEO)</option>
                     <option>Social Media</option>
+                    <option>Graphic Designing</option>
                     <option>Content Marketing</option>
                     <option>PPC (Paid Ads)</option>
                   </select>

@@ -54,7 +54,7 @@ export default function Navbar() {
     { name: "Social Media ", link: "/social-media" },
     { name: "Paid Ads (PPC)", link: "/paid-ads" },
     { name: "Graphic Design", link: "/graphic-design" },
-    { name: "Content Marketing", link: "" },
+    { name: "Content Marketing", link: "/content-marketing" },
   ];
 
   const handleScrollTo = (id: string) => {
