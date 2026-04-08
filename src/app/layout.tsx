@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/layout/footer";
 import WhatsappSticky from "./components/WhatsappSticky";
+import Chatbot from "./components/Chatbot";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -13,8 +14,8 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Hustlers Tech",
-  description: "We Hustle, You Settle",
+  title: "Digital Marketing Agency in Delhi - HustlersTech",
+  description: "Boost your brand with HustlersTech, a leading digital marketing agency in Delhi. Expert SEO, social media, and PPC services to grow your business online fast.",
   robots: {
     index: false,
     follow: false,
@@ -29,7 +30,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} antialiased bg-[#0b0f14] text-white`}>
-        <WhatsappSticky/>
+        {/* <WhatsappSticky/> */}
+        <Chatbot/>
         <Navbar/>
         {children}
         <Footer/>

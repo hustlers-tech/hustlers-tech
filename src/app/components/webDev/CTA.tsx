@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 type CTAProps = {
@@ -39,9 +40,9 @@ const CTA = ({
 
         <button
           onClick={() => router.push(buttonLink)}
-          className="mt-10 px-12 py-5 bg-primary text-white rounded-xl font-semibold hover:scale-105 transition cursor-pointer"
+          className="mt-10 px-12 py-5 bg-primary text-white rounded-xl font-semibold hover:scale-105 transition cursor-pointer flex gap-2 items-center justify-center mx-auto"
         >
-          {buttonText}
+          {buttonText} <span><ArrowRight size={20}/></span>
         </button>
 
       </div>

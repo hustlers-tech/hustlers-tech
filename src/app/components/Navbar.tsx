@@ -39,7 +39,6 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About Us", id: "about" },
     { name: "Process", id: "process" },
     { name: "FAQs", id: "faqs" },
     { name: "Blog", id: "blogs" },
@@ -149,6 +148,15 @@ export default function Navbar() {
               )}
             </AnimatePresence>
           </div>
+          <div
+            className="relative"
+          >
+            <button 
+            onClick={()=>{router.push("/about")}}
+            className="flex items-center gap-1 text-white/70 hover:text-white transition cursor-pointer">
+              About Us
+            </button>
+          </div>
 
           {/* OTHER LINKS */}
 
@@ -170,7 +178,7 @@ export default function Navbar() {
             onClick={() => router.push("/contact")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-5 py-2 rounded-xl bg-[#2596be] text-white shadow-[0_0_20px_rgba(37,150,190,0.5)] hover:shadow-[0_0_30px_rgba(37,150,190,0.7)] transition-all duration-300"
+            className="px-5 py-2 rounded-xl bg-[#2596be] text-white shadow-[0_0_20px_rgba(37,150,190,0.5)] hover:shadow-[0_0_30px_rgba(37,150,190,0.7)] transition-all duration-300 cursor-pointer"
           >
             Let’s Talk
           </motion.button>
@@ -244,6 +252,16 @@ export default function Navbar() {
                   </motion.div>
                 )}
               </AnimatePresence>
+
+              <div
+            className="relative"
+          >
+            <button 
+            onClick={()=>{router.push("/about"); setMobileOpen(false);}}
+            className="flex items-center gap-1 text-white/70 hover:text-white transition cursor-pointer">
+              About Us
+            </button>
+          </div>
 
               {navLinks.map((link) => (
                 <button

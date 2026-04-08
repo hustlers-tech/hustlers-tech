@@ -1,11 +1,16 @@
-"use client";
 
+import { Metadata } from "next";
 import AboutSection from "./components/about/AboutSection";
 import LeadBreaker from "./components/cta/LeadBreaker";
 import FaqSection from "./components/faq/FaqSection";
 import Hero from "./components/Hero";
 import ProcessSection from "./components/process/ProcessSection";
 import ServicesSection from "./components/services/ServicesSection";
+
+export const metadata: Metadata = {
+  title: "Digital Marketing Agency in Delhi - HustlersTech",
+  description: "Boost your brand with HustlersTech, a leading digital marketing agency in Delhi. Expert SEO, social media, and PPC services to grow your business online fast.",
+};
 
 const faqs = [
   {
@@ -33,6 +38,7 @@ const faqs = [
 export default function Home() {
   return(
     <>
+    <h1 className="visually-hidden">Digital Marketing Agency</h1>
     <Hero/>
     <AboutSection/>
     <ServicesSection/>
