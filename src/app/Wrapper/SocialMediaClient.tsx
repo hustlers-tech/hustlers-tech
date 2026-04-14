@@ -11,32 +11,52 @@ import FaqSection from "../components/faq/FaqSection"
 import CTA from "../components/webDev/CTA"
 
 const processSteps = [
-  { step: "01", title: "Audit & Research", description: "Deep-dive into your current social presence, competitor landscape, and audience behavior patterns." },
-  { step: "02", title: "Strategy & Calendar", description: "Custom content strategy with a detailed editorial calendar aligned to your business goals." },
-  { step: "03", title: "Create & Publish", description: "High-quality content production, scheduling, and publishing across all target platforms." },
-  { step: "04", title: "Analyze & Optimize", description: "Data-driven optimization using engagement metrics, A/B testing, and performance analytics." },
+  {
+    step: "01",
+    title: "Audit & Research",
+    description:
+      "We analyze your current presence, competitors, and audience behavior. the foundation of effective social media marketing services.",
+  },
+  {
+    step: "02",
+    title: "Strategy & Calendar",
+    description:
+      "Custom strategy with a clear content roadmap, built by experts from a top social media marketing agency in India.",
+  },
+  {
+    step: "03",
+    title: "Create & Publish",
+    description:
+      "High-quality content creation and consistent publishing across platforms to maximize reach and engagement.",
+  },
+  {
+    step: "04",
+    title: "Analyze & Optimize",
+    description:
+      "We track, test, and improve, ensuring your investment in social media marketing delivers consistent growth.",
+  },
 ];
 
 export const socialFaqs = [
   {
     q: "What platforms do you manage?",
-    a: "We manage Instagram, Facebook, LinkedIn, and other platforms based on your business goals and audience."
+    a: "We manage all major platforms including Instagram, Facebook, LinkedIn, and more as part of our social media marketing services."
   },
   {
     q: "Do you create content for our social media?",
-    a: "Yes, we handle content strategy, copywriting, and creative design tailored to your brand."
+    a: " Yes, we handle everything; from ideation to execution, as a full-service social media marketing agency."
   },
   {
     q: "How long does it take to see results?",
-    a: "Most brands see improved engagement and growth within 4–8 weeks of consistent posting and optimization."
+    a: "Typically, brands start seeing engagement growth within 4–8 weeks using our professional social media marketing services"
   },
   {
     q: "Will you handle posting and scheduling?",
-    a: "Yes, we manage the entire posting schedule to ensure consistent and optimized content delivery."
+    a: "Absolutely. We manage end-to-end execution, making us a preferred social media marketing agency near me for many businesses."
   },
   {
     q: "How do you measure success?",
-    a: "We track engagement, reach, follower growth, and conversions to continuously improve performance."
+    a: "We track engagement, reach, conversions, and ROI, ensuring your social media digital marketing efforts drive real results."
   }
 ];
 
@@ -92,7 +112,7 @@ const SocialMediaClient = () => {
               transition={{ delay: 0.35 }}
               className="mt-6 text-lg lg:text-xl text-muted-foreground leading-relaxed"
             >
-            Strategic social media management that turns followers into fans, fans into customers, and customers into brand evangelists.
+            Turn attention into impact with powerful social media marketing that builds communities, drives engagement, and converts audiences into loyal customers.
             </motion.p>
 
             <motion.div
@@ -120,14 +140,14 @@ const SocialMediaClient = () => {
         title="Our Social"
         highlight="Process"
         steps={processSteps}
-        description="A proven framework that transforms social media from a time sink into a revenue machine."
+        description="A structured system followed by leading social media marketing agencies in Delhi to turn content into measurable growth."
       />
       <WhyUs/>
-      <FaqSection faqs={socialFaqs} showViewAll={false} />
+      <FaqSection faqs={socialFaqs} showViewAll={false} highlight="You Grow on Social"/>
        <CTA
         title="Ready to Go Viral?"
-        description="Book a free strategy call and discover how we can turn your social media into your most powerful growth channel."
-        buttonText="Book Free Strategy Call"
+        description="Work with a results-driven social media marketing agency in Delhi NCR and turn your social presence into a powerful growth engine."
+        buttonText="Book Your Free Strategy Call"
 />
     </section>
   )

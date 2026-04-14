@@ -23,7 +23,7 @@ export default function Platforms() {
   <div className="container mx-auto px-6 py-8 flex items-center gap-8">
 
     <span className="text-md font-medium text-muted-foreground uppercase tracking-widest whitespace-nowrap">
-      Platforms
+      Platforms <br /> We Manage
     </span>
 
     <div className="h-6 w-px bg-border"/>

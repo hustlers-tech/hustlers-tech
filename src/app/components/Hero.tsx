@@ -26,7 +26,7 @@ const itemVariants: Variants = {
 };
 
 export default function Hero() {
-const router = useRouter();
+  const router = useRouter();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Background effects */}
@@ -89,7 +89,8 @@ const router = useRouter();
           variants={itemVariants}
           className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
         >
-          With innovative digital strategies, we help startups become powerhouses and brands become movements. Let's do battle.
+          With innovative digital strategies, we help startups become
+          powerhouses and brands become movements. Let's do battle.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -97,12 +98,18 @@ const router = useRouter();
           variants={itemVariants}
           className="mt-12 flex flex-wrap justify-center gap-4"
         >
-          <button onClick={()=>router.push("/contact")} className="group relative inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 font-heading font-semibold text-primary-foreground transition-all hover:bg-primary-dark hover:shadow-[var(--shadow-glow)] hover:scale-105 cursor-pointer">
+          <button
+            onClick={() => router.push("/contact")}
+            className="group relative inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 font-heading font-semibold text-primary-foreground transition-all hover:bg-primary-dark hover:shadow-[var(--shadow-glow)] hover:scale-105 cursor-pointer w-full sm:w-auto"
+          >
             Start Your Growth
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </button>
 
-          <Link href="#services" className="inline-flex items-center gap-2 rounded-lg border border-border px-8 py-4 font-heading font-semibold text-foreground transition-all hover:border-primary/50 hover:bg-primary/5 hover:scale-105">
+          <Link
+            href="#services"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-8 py-4 font-heading font-semibold text-foreground transition-all hover:border-primary/50 hover:bg-primary/5 hover:scale-105 w-full sm:w-auto"
+          >
             View Our Services
           </Link>
         </motion.div>

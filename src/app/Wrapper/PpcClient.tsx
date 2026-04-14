@@ -12,31 +12,51 @@ import CTA from '../components/webDev/CTA'
 export const ppcFaqs = [
   {
     q: "What is PPC advertising?",
-    a: "PPC (Pay-Per-Click) is a digital advertising model where you pay only when someone clicks on your ad."
+    a: "PPC (Pay-Per-Click) is a model where you pay for each click on your ad. Our PPC services ensure those clicks convert into real business results."
   },
   {
     q: "Which platforms do you run PPC campaigns on?",
-    a: "We run campaigns on Google Ads, Facebook Ads, Instagram Ads, LinkedIn Ads, and other relevant platforms."
+    a: "We manage campaigns across Google Ads, Facebook Ads, Instagram, and more as part of our PPC agency services."
   },
   {
     q: "How quickly can PPC generate results?",
-    a: "PPC campaigns can start generating traffic and leads within a few days after launch."
+    a: "Unlike SEO, PPC ads can start driving traffic and leads almost immediately after launch."
   },
   {
     q: "Do you manage and optimize campaigns regularly?",
-    a: "Yes, we continuously monitor, test, and optimize campaigns to improve performance and reduce costs."
+    a: "Yes, we continuously optimize campaigns, a standard practice for any best PPC agency delivering consistent ROI."
   },
   {
     q: "How do you measure PPC success?",
-    a: "We track metrics like clicks, conversions, cost per lead, and return on ad spend (ROAS)."
+    a: "We track conversions, cost per acquisition, and ROAS, ensuring your investment in Google Ads PPC is profitable."
   }
 ];
 
 const processSteps = [
-  { step: "01", title: "Discovery", description: "Deep-dive into your business goals, competitors, and market to identify the highest-ROI opportunities." },
-  { step: "02", title: "Campaign Build", description: "Strategic account structure, audience segmentation, ad creative, and landing page development." },
-  { step: "03", title: "Launch & Test", description: "Controlled launch with A/B testing on creatives, audiences, and bidding to find winning combinations." },
-  { step: "04", title: "Scale & Optimize", description: "Continuous optimization, budget scaling on winners, and new channel expansion for compounding growth." },
+  {
+    step: "01",
+    title: "Discovery",
+    description:
+      "We understand your business, audience, and competition to identify high-impact opportunities, the foundation of effective PPC services in India.",
+  },
+  {
+    step: "02",
+    title: "Campaign Build",
+    description:
+      "From account structure to creatives, we build campaigns aligned with your goals,  just like a best PPC agency should.",
+  },
+  {
+    step: "03",
+    title: "Launch & Test",
+    description:
+      "We test multiple variables across Google Ads PPC and other platforms to find winning combinations quickly.",
+  },
+  {
+    step: "04",
+    title: "Scale & Optimize",
+    description:
+      "Once we find what works, we scale aggressively while optimizing continuously, a key trait of the best PPC services.",
+  },
 ];
 
 const PpcClient = () => {
@@ -89,7 +109,7 @@ const PpcClient = () => {
               transition={{ delay: 0.35 }}
               className="mt-6 text-lg lg:text-xl text-muted-foreground leading-relaxed"
             >
-            Performance-driven paid advertising that delivers measurable ROI. We manage every click, conversion, and dollar so you can focus on scaling your business.
+            Drive real growth with performance-focused PPC services that turn every click into measurable business results.
 
             </motion.p>
 
@@ -117,14 +137,14 @@ const PpcClient = () => {
         title="Our PPC"
         highlight="Framework"
         steps={processSteps}
-        description="A battle-tested process that turns ad budgets into scalable, profitable growth channels."
+        description="A proven system followed by top PPC services in Delhi to ensure consistent, scalable growth."
       />
       <WhyUs/>
-      <FaqSection faqs={ppcFaqs} showViewAll={false} />
+      <FaqSection faqs={ppcFaqs} showViewAll={false} highlight='You Invest in PPC'/>
       <CTA
         title="Ready to Scale Your Ad Revenue?"
-        description="Get a free PPC audit and discover how much revenue you're leaving on the table with underperforming campaigns."
-        buttonText="Claim your Free Audit"
+        description="Partner with a results-driven PPC services company India and unlock the true potential of paid advertising."
+        buttonText="Claim Your Free PPC Audit"
 />
     </section>
   )

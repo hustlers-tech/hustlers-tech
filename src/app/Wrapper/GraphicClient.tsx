@@ -15,48 +15,48 @@ const processSteps = [
     step: "01",
     title: "Brief & Research",
     description:
-      "We deep-dive into your brand, audience, and competitors to define a creative direction that stands apart.",
+      "We understand your brand, audience, and competition, the foundation of effective graphic design services near me and global.",
   },
   {
     step: "02",
     title: "Concept & Sketch",
     description:
-      "Multiple creative concepts explored through mood boards, sketches, and initial design directions.",
+      "Multiple creative directions explored through mood boards and concepts, just like a best graphic designing agency would approach.",
   },
   {
     step: "03",
     title: "Design & Refine",
     description:
-      "Polished, high-fidelity designs with iterative feedback rounds until every detail is perfect.",
+      "High-fidelity designs with collaborative feedback loops to ensure every detail aligns with your vision.",
   },
   {
     step: "04",
     title: "Deliver & Support",
     description:
-      "Production-ready files in all formats, brand guidelines, and ongoing creative support.",
+      "Final files, brand guidelines, and ongoing support, what you expect from a reliable graphic design agency in Delhi.",
   },
 ];
 
 export const graphicFaqs = [
   {
     q: "What graphic design services do you offer?",
-    a: "We design social media creatives, branding assets, marketing materials, and digital graphics for businesses.",
+    a: "We provide complete graphic design services, including branding, UI/UX, social creatives, and print design. ",
   },
   {
     q: "Can you design graphics that match our brand identity?",
-    a: "Yes, all designs are created according to your brand colors, style, and visual guidelines.",
+    a: "Yes, we specialize in creating consistent visuals as a full-service graphic design agency in India.",
   },
   {
     q: "How long does it take to deliver designs?",
-    a: "Most design requests are delivered within 24–72 hours depending on complexity.",
+    a: "Most projects are delivered within 5–10 days depending on scope, standard for top graphic design companies near you.",
   },
   {
     q: "Do you provide revisions?",
-    a: "Yes, we include revisions to ensure the final design meets your expectations.",
+    a: "Yes, we offer multiple revisions to ensure satisfaction, a core part of our graphic design services in Delhi.",
   },
   {
     q: "Will I receive the source files?",
-    a: "Yes, we can provide editable source files along with the final design assets if required.",
+    a: "Absolutely. You get all final files and formats, just like you would expect from a professional graphic design company in Delhi.",
   },
 ];
 
@@ -111,9 +111,7 @@ const GraphicClient = () => {
               transition={{ delay: 0.35 }}
               className="mt-6 text-lg lg:text-xl text-muted-foreground leading-relaxed"
             >
-              From brand identity to motion graphics — we craft visuals that
-              captivate audiences, build trust, and set your brand apart in a
-              crowded market.
+              Bring your brand to life with impactful graphic design services that don’t just look good, they communicate, connect, and convert.
             </motion.p>
 
             <motion.div
@@ -128,7 +126,7 @@ const GraphicClient = () => {
                   router.push("/contact");
                 }}
               >
-                Get a Free Design Consult
+                Book Free Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               {/* <button className="inline-flex items-center gap-2 rounded-lg border border-border px-8 py-4 font-heading font-semibold text-foreground transition-all hover:border-primary/50 hover:bg-primary/5">
@@ -146,14 +144,14 @@ const GraphicClient = () => {
         title="Our Creative"
         highlight="Process"
         steps={processSteps}
-        description="A structured creative workflow that turns ideas into iconic visual identities."
+        description="A structured workflow followed by top graphic design agencies in India to ensure quality, consistency, and creativity."
       />
       <WhyUs />
-      <FaqSection faqs={graphicFaqs} showViewAll={false} />
+      <FaqSection faqs={graphicFaqs} showViewAll={false} highlight="You Invest in Design" />
       <CTA
         title="Ready for Design That Stands Out?"
-        description="Let's create visuals that make your brand impossible to ignore. Book a free creative consultation today."
-        buttonText="Book Free Consultation"
+        description="Work with a creative-first graphic design agency in Delhi and build visuals that leave a lasting impression."
+        buttonText="Book Your Free Design Consultation"
       />
     </section>
   );

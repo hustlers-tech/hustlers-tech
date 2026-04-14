@@ -7,37 +7,37 @@ const features = [
     icon: Palette,
     title: "Brand Identity",
     description:
-      "Complete brand systems — logos, color palettes, typography, and guidelines that make your brand unforgettable.",
+      "We build memorable identities, logos, colors, typography, and guidelines; making us a trusted graphic design company in Delhi for growing brands.",
   },
   {
     icon: Layers,
     title: "UI/UX Design",
     description:
-      "Intuitive, pixel-perfect interface designs for web and mobile that delight users and drive conversions.",
+      "Modern, user-first interfaces designed for performance and engagement, a key offering in our graphic design services in India.",
   },
   {
     icon: PenTool,
     title: "Illustration",
     description:
-      "Custom illustrations, icons, and infographics that bring your brand story to life with unique visual flair.",
+      "Custom visuals, icons, and infographics that add personality and depth to your brand storytelling.",
   },
   {
     icon: Image,
     title: "Print Design",
     description:
-      "Brochures, packaging, business cards, and large-format prints crafted for maximum real-world impact.",
+      "From brochures to packaging, we create real-world assets that reflect the quality of a top graphic design company in India.",
   },
   {
     icon: Type,
     title: "Typography",
     description:
-      "Custom lettering and typographic systems that give your brand a distinctive, ownable voice.",
+      "Distinctive type systems and lettering that give your brand a unique voice and visual consistency.",
   },
   {
     icon: Sparkles,
     title: "Motion Graphics",
     description:
-      "Animated logos, social media content, and explainer visuals that capture attention instantly.",
+      "Animated visuals that grab attention instantly, ideal for brands investing in advertising graphic design services.",
   },
 ];
 
@@ -73,8 +73,7 @@ const GraphicServices = () => {
           className="relative text-md tracking-tight px-4 pb-10"
         >
           <span>
-            Every visual touchpoint crafted with precision — from pixels to
-            print, we make brands look extraordinary.
+            As a full-service graphic design agency India, we deliver end-to-end solutions across digital and print, tailored for brands that want to stand out.
           </span>
         </motion.p>
       </div>

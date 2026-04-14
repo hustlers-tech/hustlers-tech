@@ -31,15 +31,15 @@ const WhyUs = () => {
       </div>
 
               <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-                We don't do generic templates. Every design is a strategic asset built to elevate your brand and drive real business outcomes.
+                We don’t do generic things. Every design is strategic, making us one of the most trusted graphic design companies for brands that want to stand out.
               </p>
               <ul className="mt-8 space-y-4">
                 {[
-                  "Senior designers with 10+ years across branding & digital",
-                  "Unlimited revisions until you're 100% satisfied",
-                  "Full brand guidelines & production-ready file delivery",
-                  "Fast turnaround — most projects delivered in 5-10 business days",
-                  "Consistent visual language across all touchpoints",
+                  "Experienced team from leading graphic design companies in India",
+                  "Unlimited revisions until perfection",
+                  "Complete brand kits and production-ready files",
+                  "Fast turnaround with consistent quality",
+                  "Recognized as a reliable graphic design agency near me for many businesses",
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 group">
                     <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />

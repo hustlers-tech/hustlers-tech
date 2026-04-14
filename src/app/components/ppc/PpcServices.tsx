@@ -2,12 +2,42 @@ import { Megaphone, Target, DollarSign, BarChart3, Zap, Eye, CheckCircle2, Arrow
 import { motion } from "framer-motion";
 
 const features = [
-  { icon: Target, title: "Audience Targeting", description: "Precision targeting using demographics, interests, behavior, and custom audiences to reach your ideal customers." },
-  { icon: DollarSign, title: "Bid Optimization", description: "AI-powered bidding strategies that maximize conversions while minimizing your cost per acquisition." },
-  { icon: Megaphone, title: "Ad Creative", description: "High-converting ad copy, visuals, and video creatives A/B tested for peak performance across platforms." },
-  { icon: BarChart3, title: "ROAS Tracking", description: "End-to-end attribution and return on ad spend tracking so every dollar is accounted for." },
-  { icon: Zap, title: "Landing Pages", description: "Conversion-optimized landing pages designed to turn paid clicks into paying customers." },
-  { icon: Eye, title: "Retargeting", description: "Strategic remarketing campaigns that re-engage warm audiences and recover lost conversions." },
+  {
+    icon: Target,
+    title: "Audience Targeting",
+    description:
+      "We identify and reach the right audience using data-backed strategies — a core strength of our PPC marketing agency approach.",
+  },
+  {
+    icon: DollarSign,
+    title: "Bid Optimization",
+    description:
+      "Using advanced automation and insights, we optimize bids to deliver better results with lower costs, a standard across the best PPC services in India.",
+  },
+  {
+    icon: Megaphone,
+    title: "Ad Creative",
+    description:
+      "High-performing creatives and compelling copy built for conversions, ensuring your PPC ads stand out in competitive markets.",
+  },
+  {
+    icon: BarChart3,
+    title: "ROAS Tracking",
+    description:
+      "Complete tracking and reporting systems that help you understand performance, a key feature of our Google Ads management services.",
+  },
+  {
+    icon: Zap,
+    title: "Landing Pages",
+    description:
+      "We design conversion-driven pages that turn traffic into revenue, making us a results-focused PPC service agency.",
+  },
+  {
+    icon: Eye,
+    title: "Retargeting",
+    description:
+      "Smart remarketing campaigns that bring back lost users and increase conversions, a must-have for any serious PPC agency.",
+  },
 ];
 
 const PpcServices = () => {
@@ -42,7 +72,7 @@ const PpcServices = () => {
           className="relative text-md tracking-tight px-4 pb-10"
         >
           <span>
-            From awareness to conversion — every stage of the buyer journey optimized for maximum return.
+            From awareness to conversions, our PPC agency services are designed to capture demand and convert it efficiently across every stage of the funnel.
           </span>
         </motion.p>
       </div>

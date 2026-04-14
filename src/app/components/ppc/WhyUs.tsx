@@ -31,15 +31,16 @@ const WhyUs = () => {
       </div>
 
               <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-                We treat your ad budget like our own. Every campaign is built for profit — not vanity metrics, not impressions, but real revenue growth.
+                We don’t just run ads,  we build profit engines. That’s what makes us a trusted PPC agency in Delhi and a reliable Google Ads service provider.
               </p>
               <ul className="mt-8 space-y-4">
                 {[
-                  "Google & Meta certified ad specialists on every account",
-                  "Average 6.2x ROAS across all client accounts",
-                  "Real-time dashboards — see your performance 24/7",
-                  "No long-term contracts — results keep you, not paperwork",
-                  "Weekly optimization calls with transparent reporting",
+                  "Certified experts in Google Ads marketing services and paid media",
+                  "6.2x average ROAS across campaigns",
+                  "Recognized among the best PPC services in Delhi",
+                  "Real-time dashboards for complete transparency",
+                  "No long-term contracts, performance keeps you with us",
+                  "Weekly reporting and optimization calls",
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 group">
                     <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />

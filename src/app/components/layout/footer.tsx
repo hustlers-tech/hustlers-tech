@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Instagram, Linkedin, Twitter, Mail } from "lucide-react";
+import { Instagram, Linkedin, Twitter, Mail, Facebook, Youtube } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -33,10 +33,10 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex gap-5 mt-8">
-              <SocialIcon href="#" icon={<Instagram size={18} />} />
-              <SocialIcon href="#" icon={<Linkedin size={18} />} />
-              <SocialIcon href="#" icon={<Twitter size={18} />} />
-              <SocialIcon href="#" icon={<Mail size={18} />} />
+              <SocialIcon href="https://www.instagram.com/hustlerstech.official/" icon={<Instagram size={18} />} />
+              <SocialIcon href="https://www.linkedin.com/company/hustlers-tech-official/" icon={<Linkedin size={18} />} />
+              <SocialIcon href="https://www.facebook.com/hustlerstech/" icon={<Facebook size={18} />} />
+              <SocialIcon href="https://www.youtube.com/@hustlers-tech" icon={<Youtube size={18} />} />
             </div>
           </div>
 
@@ -63,7 +63,7 @@ export default function Footer() {
                 { name: "Social Media Marketing", href: "/social-media" },
                 { name: "PPC service (Paid Ads)", href: "/paid-ads" },
                 { name: "Graphic Design", href: "/graphic-design" },
-                { name: "Content Marketing", href: "#" },
+                { name: "Content Marketing", href: "/content-marketing" },
               ]}
             />
           </div>
@@ -73,14 +73,17 @@ export default function Footer() {
             <FooterTitle>Contact</FooterTitle>
 
             <ul className="mt-6 space-y-3 text-gray-400">
-              <li>info@hustlerstech.com</li>
-              <li>+91 9354040527</li>
+              <li><a href="mailto:hustlerstech.com@gmail.com" className="hover:text-primary transition-colors duration-300">hustlerstech.com@gmail.com</a></li>
+              <li><a href="tel:9354040527" className="hover:text-primary transition-colors duration-300">+91 9354040527</a></li>
+              <li><a href="tel:9013856105" className="hover:text-primary transition-colors duration-300">+91 9013856105</a></li>
               <li>Delhi, India</li>
             </ul>
 
-            <button className="mt-8 px-7 py-3 border border-white/20 rounded-full text-sm tracking-wide hover:border-primary hover:text-primary transition-all duration-300">
+              <Link href={"/contact"}>
+            <button className="mt-8 px-7 py-3 border border-white/20 rounded-full text-sm tracking-wide hover:border-primary hover:text-primary transition-all duration-300 cursor-pointer">
               Start a Project →
             </button>
+            </Link>
           </div>
         </div>
 

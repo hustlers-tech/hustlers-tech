@@ -31,15 +31,16 @@ const WhyUs = () => {
       </div>
 
               <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-                We don't just post content — we engineer social ecosystems that drive engagement, build communities, and convert audiences into customers.
+                We go beyond posting, we create ecosystems that perform. That’s why brands trust us as their go-to social media marketing agency.
               </p>
               <ul className="mt-8 space-y-4">
                 {[
-                  "Managed 50M+ impressions across client accounts",
-                  "Average 340% increase in engagement within 3 months",
-                  "Full-service content production — design, copy, video",
-                  "Dedicated social media strategist for every account",
-                  "Weekly performance reports with actionable insights",
+                  "50M+ impressions generated across campaigns",
+                  "340% average increase in engagement within 3 months",
+                  "Recognized among top social media marketing companies in India",
+                  "Full-service execution, content, design, video, ads",
+                  "Dedicated strategist for every brand",
+                  "Weekly insights and transparent reporting ",
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 group">
                     <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />

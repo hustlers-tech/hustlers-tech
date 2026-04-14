@@ -6,37 +6,37 @@ const features = [
     icon: Share2,
     title: "Content Creation",
     description:
-      "Scroll-stopping visuals, reels, and carousels crafted to resonate with your audience and amplify brand voice.",
+      "Scroll-stopping visuals, reels, and carousels designed to stand out. Our social media marketing services ensure your brand voice is consistent and memorable.",
   },
   {
     icon: Users,
     title: "Community Management",
     description:
-      "Authentic engagement that builds loyal communities — responding, moderating, and sparking meaningful conversations.",
+      "We build genuine relationships through conversations, making us one of the most reliable social media marketing companies for long-term engagement.",
   },
   {
     icon: Heart,
     title: "Influencer Partnerships",
     description:
-      "Strategic collaborations with creators who align with your brand values and reach your ideal customers.",
+      "Collaborate with creators who align with your brand, a key strategy used by top social media marketing agencies in India.",
   },
   {
     icon: Video,
     title: "Video & Reels",
     description:
-      "Short-form video content optimized for virality across TikTok, Instagram Reels, and YouTube Shorts.",
+      "Short-form content built for reach and virality, helping your brand grow faster through smart social media marketing strategies.",
   },
   {
     icon: Megaphone,
     title: "Paid Social Ads",
     description:
-      "Precision-targeted ad campaigns on Meta, TikTok, and LinkedIn that maximize ROAS and scale profitably.",
+      "Targeted campaigns that drive real ROI, a must-have for businesses looking for scalable social media marketing near me solutions.",
   },
   {
     icon: MessageCircle,
     title: "Social Listening",
     description:
-      "Real-time brand monitoring and sentiment analysis to stay ahead of trends and protect your reputation.",
+      "Stay ahead of trends and understand your audience better with insights powered by advanced social media digital marketing tools.",
   },
 ];
 
@@ -73,7 +73,7 @@ const SocialServices = () => {
           className="relative text-md tracking-tight px-4 pb-10"
         >
           <span>
-            From content creation to paid amplification — a complete social media engine for explosive growth.
+            As a performance-driven social media marketing company in India, we offer end-to-end solutions designed to grow your brand across platforms.
           </span>
         </motion.p>
       </div>
