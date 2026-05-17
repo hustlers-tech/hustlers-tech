@@ -7,7 +7,7 @@ import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,6 +17,8 @@ export default function Navbar() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   const router = useRouter();
+  const pathname = usePathname();
+  const isHomepage = pathname === "/";
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,9 +64,7 @@ export default function Navbar() {
     if (!element) return;
 
     const navbarOffset = 100;
-
     const elementPosition = element.getBoundingClientRect().top;
-
     const offsetPosition = elementPosition + window.pageYOffset - navbarOffset;
 
     window.scrollTo({
@@ -112,10 +112,8 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-
         <div className="hidden md:flex items-center gap-8 relative">
           {/* SERVICES DROPDOWN */}
-
           <div
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
@@ -148,57 +146,51 @@ export default function Navbar() {
               )}
             </AnimatePresence>
           </div>
-          <div
-            className="relative"
-          >
+
+          <div className="relative">
             <button 
-            onClick={()=>{router.push("/about")}}
-            className="flex items-center gap-1 text-white/70 hover:text-white transition cursor-pointer">
+              onClick={() => router.push("/about")}
+              className="flex items-center gap-1 text-white/70 hover:text-white transition cursor-pointer"
+            >
               About Us
             </button>
           </div>
 
-          {/* OTHER LINKS */}
-
-          {navLinks.map((link) => (
+          {/* HOMEPAGE EXCLUSIVE LINKS */}
+          {isHomepage && navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => handleScrollTo(link.id)}
               className="relative group text-white/70 hover:text-white transition cursor-pointer"
             >
               {link.name}
-
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#2596be] transition-all duration-300 group-hover:w-full" />
             </button>
           ))}
 
-          {/* CTA */}
-
-          <motion.button
-            onClick={() => router.push("/contact")}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-5 py-2 rounded-xl bg-[#2596be] text-white shadow-[0_0_20px_rgba(37,150,190,0.5)] hover:shadow-[0_0_30px_rgba(37,150,190,0.7)] transition-all duration-300 cursor-pointer"
-          >
-            Let’s Talk
-          </motion.button>
+          {/* CTA Button with Micro-copy Glow */}
+          <div className="relative group/cta">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#2596be] to-blue-500 rounded-xl blur opacity-30 group-hover/cta:opacity-70 transition duration-300" />
+            <motion.button
+              onClick={() => router.push("/contact")}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative px-5 py-2 rounded-xl bg-[#2596be] text-white font-semibold text-sm transition-all duration-300 cursor-pointer"
+            >
+              Let's Talk
+            </motion.button>
+          </div>
         </div>
 
         {/* Mobile Toggle */}
-
         <div className="md:hidden">
           <button onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? (
-              <CloseIcon className="text-white" />
-            ) : (
-              <MenuIcon className="text-white" />
-            )}
+            {mobileOpen ? <CloseIcon className="text-white" /> : <MenuIcon className="text-white" />}
           </button>
         </div>
       </div>
 
       {/* MOBILE MENU */}
-
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -213,14 +205,11 @@ export default function Navbar() {
               animate="show"
               variants={{
                 hidden: {},
-                show: {
-                  transition: { staggerChildren: 0.08 },
-                },
+                show: { transition: { staggerChildren: 0.08 } },
               }}
               className="flex flex-col gap-5 p-6"
             >
               {/* Services Mobile */}
-
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                 className="text-left text-white/70"
@@ -253,17 +242,17 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
 
-              <div
-            className="relative"
-          >
-            <button 
-            onClick={()=>{router.push("/about"); setMobileOpen(false);}}
-            className="flex items-center gap-1 text-white/70 hover:text-white transition cursor-pointer">
-              About Us
-            </button>
-          </div>
+              <div className="relative">
+                <button 
+                  onClick={() => { router.push("/about"); setMobileOpen(false); }}
+                  className="flex items-center gap-1 text-white/70 hover:text-white transition cursor-pointer"
+                >
+                  About Us
+                </button>
+              </div>
 
-              {navLinks.map((link) => (
+              {/* HOMEPAGE EXCLUSIVE LINKS (MOBILE) */}
+              {isHomepage && navLinks.map((link) => (
                 <button
                   key={link.name}
                   onClick={() => {
@@ -281,9 +270,9 @@ export default function Navbar() {
                   router.push("/contact");
                   setMobileOpen(false);
                 }}
-                className="bg-[#2596be] py-3 rounded-xl shadow-[0_0_20px_rgba(37,150,190,0.4)]"
+                className="bg-[#2596be] text-white font-bold py-3 rounded-xl shadow-[0_0_20px_rgba(37,150,190,0.4)]"
               >
-                Let’s Talk
+                Let's Talk
               </button>
             </motion.div>
           </motion.div>

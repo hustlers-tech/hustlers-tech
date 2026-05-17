@@ -29,7 +29,7 @@ export default function FaqSection({
   return (
     <>
       {/* Heading */}
-      <div className="relative text-center overflow-hidden mt-10" id="faq">
+      <div className="relative text-center overflow-hidden mt-10" id="faqs">
         <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 mb-5">
           <span className="text-sm font-medium text-primary tracking-wide">
             FAQ's

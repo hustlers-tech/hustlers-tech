@@ -13,12 +13,14 @@ const montserrat = Montserrat({
   display: 'swap',
 })
 
+const isDev = process.env.SITE_TYPE === "dev";
+
 export const metadata: Metadata = {
   title: "Digital Marketing Agency in Delhi - HustlersTech",
   description: "Boost your brand with HustlersTech, a leading digital marketing agency in Delhi. Expert SEO, social media, and PPC services to grow your business online fast.",
   robots: {
-    index: false,
-    follow: false,
+    index: !isDev,
+    follow: !isDev,
   },
 };
 
