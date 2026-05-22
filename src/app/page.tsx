@@ -10,6 +10,9 @@ import ServicesSection from "./components/services/ServicesSection";
 export const metadata: Metadata = {
   title: "Digital Marketing Agency in Delhi - HustlersTech",
   description: "Boost your brand with HustlersTech, a leading digital marketing agency in Delhi. Expert SEO, social media, and PPC services to grow your business online fast.",
+  alternates: {
+    canonical: "https://hustlerstech.com/",
+  },
 };
 
 const faqs = [
