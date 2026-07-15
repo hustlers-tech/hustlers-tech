@@ -16,7 +16,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/admin/', '/privacy/', '/terms/'],
+      disallow: ['/api/', '/admin/', '/privacy', '/terms'],
     },
     sitemap: 'https://hustlerstech.com/sitemap.xml',
   };
