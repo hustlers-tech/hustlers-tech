@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Service } from "@/app/data/services";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface Props {
   service: Service;
@@ -35,7 +36,8 @@ export default function ServiceBlock({ service, index }: Props) {
 
       <div className="relative bg-[#0b0f18] border border-white/5 rounded-3xl p-10 md:p-14 grid lg:grid-cols-2 gap-12 items-center shadow-2xl h-auto md:h-150">
 
-       <img
+       <Image
+       width={100} height={100} loading="lazy"
           src={service.image}
           alt={service.title}
           className="absolute inset-0 w-full h-full object-cover hidden md:block rounded-3xl"

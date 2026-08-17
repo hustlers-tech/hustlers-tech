@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+// import MenuIcon from "@mui/icons-material/Menu";
+// import CloseIcon from "@mui/icons-material/Close";
+// import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -121,7 +122,7 @@ export default function Navbar() {
           >
             <button className="flex items-center gap-1 text-white/70 hover:text-white transition cursor-pointer">
               Services
-              <KeyboardArrowDownIcon fontSize="small" />
+              <ChevronDown fontSize="small" />
             </button>
 
             <AnimatePresence>
@@ -185,7 +186,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <div className="md:hidden">
           <button onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? <CloseIcon className="text-white" /> : <MenuIcon className="text-white" />}
+            {mobileOpen ? <X className="text-white" /> : <Menu className="text-white" />}
           </button>
         </div>
       </div>

@@ -8,6 +8,7 @@ import OurProcess from "../components/webDev/OurProcess";
 import WhyChoose from "../components/webDev/WhyChoose";
 import FaqSection from "../components/faq/FaqSection";
 import CTA from "../components/webDev/CTA";
+import Image from "next/image";
 
 const webDevFaqs = [
   {
@@ -62,7 +63,8 @@ export default function WebDevClient() {
       {/* Hero section */}
       <section className="relative pt-24 pb-20 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Image
+            width={100} height={100} loading="lazy"
             src="/services/web-dev-hero.jpg"
             alt="Web development workspace with multiple screens"
             className="w-full h-full object-cover"
