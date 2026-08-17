@@ -72,7 +72,6 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/layout/footer";
-import WhatsappSticky from "./components/WhatsappSticky";
 import Chatbot from "./components/Chatbot";
 
 const montserrat = Montserrat({
@@ -109,7 +108,7 @@ export default function RootLayout({
         {!isDev && (
           <>
             {/* Google Tag Manager Script */}
-            <Script id="google-tag-manager" strategy="afterInteractive">
+            <Script id="google-tag-manager" strategy="lazyOnload">
               {`
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -124,7 +123,7 @@ export default function RootLayout({
               src="https://www.googletagmanager.com/gtag/js?id=G-VVT9JX6LJB"
               strategy="afterInteractive"
             />
-            <Script id="google-analytics" strategy="afterInteractive">
+            <Script id="google-analytics" strategy="lazyOnload">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
@@ -149,10 +148,10 @@ export default function RootLayout({
         )}
 
         {/* <WhatsappSticky/> */}
-        <Chatbot/>
         <Navbar/>
         {children}
         <Footer/>
+        <Chatbot/>
       </body>
     </html>
   );

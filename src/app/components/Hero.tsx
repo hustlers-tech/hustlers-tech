@@ -1,38 +1,38 @@
 "use client";
+
 import { ArrowRight, Zap } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const containerVariants: Variants = {
-  hidden: {},
+  hidden: { opacity: 0 },
   show: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.12,
     },
   },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.5,
       ease: [0.16, 1, 0.3, 1],
     },
   },
 };
 
 export default function Hero() {
-  const router = useRouter();
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Background effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/8 blur-[150px]" />
-        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-primary-dark/8 blur-[120px]" />
+    <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20 md:pt-0">
+      {/* Optimized Background effects (lightweight blur) */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[350px] md:w-[600px] h-[350px] md:h-[600px] rounded-full bg-primary/10 blur-[60px] md:blur-[100px] transform-gpu" />
+        <div className="absolute bottom-10 left-1/4 w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-full bg-primary-dark/10 blur-[50px] md:blur-[80px] transform-gpu" />
       </div>
 
       <motion.div
@@ -44,10 +44,10 @@ export default function Hero() {
         {/* Badge */}
         <motion.div
           variants={itemVariants}
-          className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 mb-10"
+          className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 md:px-5 md:py-2 mb-8 md:mb-10"
         >
           <Zap className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-primary tracking-wide uppercase">
+          <span className="text-xs md:text-sm font-medium text-primary tracking-wide uppercase">
             Your Digital Growth Partners
           </span>
         </motion.div>
@@ -55,13 +55,13 @@ export default function Hero() {
         {/* Heading */}
         <motion.h1
           variants={itemVariants}
-          className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight"
+          className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] md:leading-[0.95] tracking-tight text-white"
         >
           We <span className="text-primary">Hustle.</span>{" "}
           <span className="relative inline-block">
             You Scale.
-            <motion.svg
-              className="absolute -bottom-4 left-0 w-full h-[14px]"
+            <svg
+              className="absolute -bottom-2 md:-bottom-4 left-0 w-full h-[10px] md:h-[14px]"
               viewBox="0 0 200 14"
               preserveAspectRatio="none"
             >
@@ -74,20 +74,19 @@ export default function Hero() {
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
                 transition={{
-                  duration: 1.5,
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: 0.5,
+                  duration: 1.2,
+                  ease: "easeInOut",
+                  delay: 0.3,
                 }}
-                style={{ pathLength: 0 }}
               />
-            </motion.svg>
+            </svg>
           </span>
         </motion.h1>
 
         {/* Subtext */}
         <motion.p
           variants={itemVariants}
-          className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+          className="mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
         >
           With innovative digital strategies, we help startups become
           powerhouses and brands become movements. Let's do battle.
@@ -96,19 +95,19 @@ export default function Hero() {
         {/* CTA Buttons */}
         <motion.div
           variants={itemVariants}
-          className="mt-12 flex flex-wrap justify-center gap-4"
+          className="mt-10 md:mt-12 flex flex-col sm:flex-row justify-center gap-4"
         >
-          <button
-            onClick={() => router.push("/contact")}
-            className="group relative inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 font-heading font-semibold text-primary-foreground transition-all hover:bg-primary-dark hover:shadow-[var(--shadow-glow)] hover:scale-105 cursor-pointer w-full sm:w-auto"
+          <Link
+            href="/contact"
+            className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 font-heading font-semibold text-white transition-all duration-200 hover:bg-[#1e7e9e] hover:shadow-[0_0_25px_rgba(37,150,190,0.4)] active:scale-95 w-full sm:w-auto"
           >
             Start Your Growth
-            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </button>
+            <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+          </Link>
 
           <Link
             href="#services"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-8 py-4 font-heading font-semibold text-foreground transition-all hover:border-primary/50 hover:bg-primary/5 hover:scale-105 w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-8 py-4 font-heading font-semibold text-white transition-all duration-200 hover:border-primary/50 hover:bg-white/5 active:scale-95 w-full sm:w-auto"
           >
             View Our Services
           </Link>

@@ -1,72 +1,51 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-// import MenuIcon from "@mui/icons-material/Menu";
-// import CloseIcon from "@mui/icons-material/Close";
-// import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
+
+const NAV_LINKS = [
+  { name: "Process", id: "process" },
+  { name: "FAQs", id: "faqs" },
+  { name: "Blog", id: "blogs" },
+];
+
+const SERVICES = [
+  { name: "Web Development", link: "/web-development" },
+  { name: "Search Engine Optimization (SEO)", link: "/search-engine-optimization" },
+  { name: "Social Media", link: "/social-media" },
+  { name: "Paid Ads (PPC)", link: "/paid-ads" },
+  { name: "Graphic Design", link: "/graphic-design" },
+  { name: "Content Marketing", link: "/content-marketing" },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
 
-  const router = useRouter();
   const pathname = usePathname();
   const isHomepage = pathname === "/";
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768);
-    };
-
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const navLinks = [
-    { name: "Process", id: "process" },
-    { name: "FAQs", id: "faqs" },
-    { name: "Blog", id: "blogs" },
-  ];
-
-  const services = [
-    { name: "Web Development", link: "/web-development" },
-    {
-      name: "Search Engine Optimization (SEO)",
-      link: "/search-engine-optimization",
-    },
-    { name: "Social Media ", link: "/social-media" },
-    { name: "Paid Ads (PPC)", link: "/paid-ads" },
-    { name: "Graphic Design", link: "/graphic-design" },
-    { name: "Content Marketing", link: "/content-marketing" },
-  ];
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const isScrolled = latest > 40;
+    if (isScrolled !== scrolled) {
+      setScrolled(isScrolled);
+    }
+  });
 
   const handleScrollTo = (id: string) => {
     const element = document.getElementById(id);
-
     if (!element) return;
 
     const navbarOffset = 100;
     const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - navbarOffset;
+    const offsetPosition = elementPosition + window.scrollY - navbarOffset;
 
     window.scrollTo({
       top: offsetPosition,
@@ -79,66 +58,57 @@ export default function Navbar() {
   return (
     <motion.nav
       initial={false}
-      animate={
-        isDesktop
-          ? {
-              width: scrolled ? "60%" : "80%",
-              y: scrolled ? 20 : 0,
-              borderRadius: scrolled ? "20px" : "0px",
-            }
-          : {
-              width: "100%",
-              y: 0,
-              borderRadius: "0px",
-            }
-      }
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="fixed top-0 left-1/2 -translate-x-1/2 z-50"
+      animate={{
+        y: scrolled ? 12 : 0,
+      }}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-full ${
+        scrolled ? "md:w-[65%]" : "md:w-[85%]"
+      }`}
     >
       <div
-        className={`flex items-center justify-between transition-all duration-500 ${
+        className={`flex items-center justify-between transition-all duration-300 ${
           scrolled
-            ? "bg-[#0b0f14]/70 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_rgba(37,150,190,0.15)] px-6 py-3"
-            : "bg-transparent px-5 py-6"
+            ? "bg-[#0b0f14]/80 backdrop-blur-xl border border-white/10 shadow-[0_0_30px_rgba(37,150,190,0.15)] px-6 py-3 rounded-none md:rounded-2xl"
+            : "bg-transparent px-6 py-5"
         }`}
       >
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/HustlersTech_logo.png"
             alt="HustlersTech Logo"
-            width={200}
-            height={40}
+            width={170}
+            height={34}
             priority
           />
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8 relative">
-          {/* SERVICES DROPDOWN */}
+        <div className="hidden md:flex items-center gap-7 text-sm font-medium">
+          {/* Services Dropdown */}
           <div
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
-            className="relative"
+            className="relative py-2"
           >
-            <button className="flex items-center gap-1 text-white/70 hover:text-white transition cursor-pointer">
+            <button className="flex items-center gap-1.5 text-white/70 hover:text-white transition">
               Services
-              <ChevronDown fontSize="small" />
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
             </button>
 
             <AnimatePresence>
               {servicesOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.25 }}
-                  className="absolute top-7 left-0 w-64 bg-[#111827] border border-white/10 rounded-xl shadow-xl backdrop-blur-xl overflow-hidden"
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-0 w-60 bg-[#111827]/95 border border-white/10 rounded-xl shadow-xl backdrop-blur-xl py-2"
                 >
-                  {services.map((service) => (
+                  {SERVICES.map((service) => (
                     <Link
                       key={service.name}
                       href={service.link}
-                      className="block px-5 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 transition"
+                      className="block px-4 py-2.5 text-xs text-white/70 hover:text-white hover:bg-white/5 transition"
                     >
                       {service.name}
                     </Link>
@@ -148,134 +118,108 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <div className="relative">
-            <button 
-              onClick={() => router.push("/about")}
-              className="flex items-center gap-1 text-white/70 hover:text-white transition cursor-pointer"
-            >
-              About Us
-            </button>
-          </div>
+          <Link href="/about" className="text-white/70 hover:text-white transition">
+            About Us
+          </Link>
 
-          {/* HOMEPAGE EXCLUSIVE LINKS */}
-          {isHomepage && navLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => handleScrollTo(link.id)}
-              className="relative group text-white/70 hover:text-white transition cursor-pointer"
-            >
-              {link.name}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#2596be] transition-all duration-300 group-hover:w-full" />
-            </button>
-          ))}
+          {isHomepage &&
+            NAV_LINKS.map((link) => (
+              <button
+                key={link.name}
+                onClick={() => handleScrollTo(link.id)}
+                className="relative text-white/70 hover:text-white transition group py-1"
+              >
+                {link.name}
+                <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#2596be] transition-all duration-200 group-hover:w-full" />
+              </button>
+            ))}
 
-          {/* CTA Button with Micro-copy Glow */}
-          <div className="relative group/cta">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#2596be] to-blue-500 rounded-xl blur opacity-30 group-hover/cta:opacity-70 transition duration-300" />
-            <motion.button
-              onClick={() => router.push("/contact")}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative px-5 py-2 rounded-xl bg-[#2596be] text-white font-semibold text-sm transition-all duration-300 cursor-pointer"
-            >
-              Let's Talk
-            </motion.button>
-          </div>
+          <Link
+            href="/contact"
+            className="relative px-5 py-2 rounded-xl bg-[#2596be] hover:bg-[#1e7e9e] text-white font-semibold shadow-[0_0_20px_rgba(37,150,190,0.3)] transition active:scale-95"
+          >
+            Let's Talk
+          </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="md:hidden">
-          <button onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? <X className="text-white" /> : <Menu className="text-white" />}
-          </button>
-        </div>
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden text-white p-1"
+          aria-label="Toggle Menu"
+        >
+          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
       </div>
 
-      {/* MOBILE MENU */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35 }}
-            className="md:hidden bg-[#111827] border border-white/10 backdrop-blur-xl overflow-hidden"
+            transition={{ duration: 0.25 }}
+            className="md:hidden bg-[#0b0f14]/95 border-b border-white/10 backdrop-blur-2xl overflow-hidden"
           >
-            <motion.div
-              initial="hidden"
-              animate="show"
-              variants={{
-                hidden: {},
-                show: { transition: { staggerChildren: 0.08 } },
-              }}
-              className="flex flex-col gap-5 p-6"
-            >
-              {/* Services Mobile */}
-              <button
-                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                className="text-left text-white/70"
-              >
-                Services
-              </button>
-
-              <AnimatePresence>
-                {mobileServicesOpen && (
-                  <motion.div
-                    initial={{ height: 0 }}
-                    animate={{ height: "auto" }}
-                    exit={{ height: 0 }}
-                    className="flex flex-col ml-4 gap-3"
-                  >
-                    {services.map((s) => (
-                      <Link
-                        key={s.name}
-                        href={s.link}
-                        onClick={() => {
-                          setMobileOpen(false);
-                          setMobileServicesOpen(false);
-                        }}
-                        className="text-white/60 text-sm"
-                      >
-                        {s.name}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              <div className="relative">
-                <button 
-                  onClick={() => { router.push("/about"); setMobileOpen(false); }}
-                  className="flex items-center gap-1 text-white/70 hover:text-white transition cursor-pointer"
+            <div className="flex flex-col gap-4 p-6">
+              <div>
+                <button
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="flex items-center justify-between w-full text-white/80 font-medium py-1"
                 >
-                  About Us
+                  Services
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} />
                 </button>
+
+                <AnimatePresence>
+                  {mobileServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0 }}
+                      animate={{ height: "auto" }}
+                      exit={{ height: 0 }}
+                      className="flex flex-col pl-3 mt-2 gap-2.5 overflow-hidden border-l border-white/10"
+                    >
+                      {SERVICES.map((s) => (
+                        <Link
+                          key={s.name}
+                          href={s.link}
+                          onClick={() => setMobileOpen(false)}
+                          className="text-white/60 text-sm hover:text-white"
+                        >
+                          {s.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
-              {/* HOMEPAGE EXCLUSIVE LINKS (MOBILE) */}
-              {isHomepage && navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => {
-                    handleScrollTo(link.id);
-                    setMobileOpen(false);
-                  }}
-                  className="text-white/70 text-left"
-                >
-                  {link.name}
-                </button>
-              ))}
+              <Link
+                href="/about"
+                onClick={() => setMobileOpen(false)}
+                className="text-white/80 font-medium py-1"
+              >
+                About Us
+              </Link>
 
-              <button
-                onClick={() => {
-                  router.push("/contact");
-                  setMobileOpen(false);
-                }}
-                className="bg-[#2596be] text-white font-bold py-3 rounded-xl shadow-[0_0_20px_rgba(37,150,190,0.4)]"
+              {isHomepage &&
+                NAV_LINKS.map((link) => (
+                  <button
+                    key={link.name}
+                    onClick={() => handleScrollTo(link.id)}
+                    className="text-white/80 font-medium text-left py-1"
+                  >
+                    {link.name}
+                  </button>
+                ))}
+
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="w-full text-center bg-[#2596be] hover:bg-[#1e7e9e] text-white font-semibold py-2.5 rounded-xl shadow-[0_0_20px_rgba(37,150,190,0.3)] mt-2"
               >
                 Let's Talk
-              </button>
-            </motion.div>
+              </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
