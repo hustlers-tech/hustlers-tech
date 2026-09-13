@@ -7,10 +7,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.hustlerstech.com/about",
   },
-  robots: {
-    index: false,
-    follow: false,
-  },
 };
 
 const AboutPage = () => {

@@ -1032,12 +1032,7 @@ const reasons = [
 function AboutClient() {
   return (
     <main className="relative min-h-screen bg-[#020408] text-white selection:bg-[#2596be]/30 overflow-x-hidden">
-      
-      {/* 
-        OPTIMIZED BACKGROUND ENGINE:
-        Exact same visual look using hardware-accelerated radial-gradients 
-        instead of browser-lagging CPU filter blurs.
-      */}
+
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none [contain:paint]">
         {/* Top Center Ambient Glow */}
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle_at_center,rgba(37,150,190,0.18)_0%,transparent_70%)] will-change-transform" />
@@ -1182,7 +1177,7 @@ function AboutClient() {
                 className="relative w-[280px] sm:w-[380px] h-[360px] sm:h-[480px] z-10"
               >
                 <Image
-                  src="/mr-hux-about.png"
+                  src="/hux-about-image.png"
                   alt="Mr. Hux - Growth & Strategy Architect"
                   fill
                   priority
