@@ -40,7 +40,7 @@ export default function ServiceBlock({ service, index }: Props) {
         </span>
 
         {/* Content */}
-        <div className="relative z-10 max-w-xl">
+        <div className="relative z-10 max-w-full">
           <h3 className="text-3xl md:text-5xl font-bold leading-tight text-white">
             {service.title}
           </h3>

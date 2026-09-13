@@ -24,7 +24,7 @@ export default function FaqSection({
   title = "Questions before",
   highlight = "we build",
   showViewAll = true,
-  viewAllHref = "/faq",
+  viewAllHref = "/",
 }: Props) {
   const [active, setActive] = useState<number | null>(null);
 

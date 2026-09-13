@@ -7,26 +7,26 @@ export interface ProcessStepType {
 export const processSteps: ProcessStepType[] = [
   {
     number: "01",
-    title: "Discovery & Strategy",
+    title: "Discovery and Strategy",
     description:
-      "To develop an effective plan for growth, we start by understanding your business, your audience and what goals you wish to pursue.",
+      "We start by learning about your business, your audience and your goals. This provides a foundation on which we can build a strategy that works for your business, rather than forcing your business into a standard template.",
   },
   {
     number: "02",
     title: "Creative Planning",
     description:
-      "Next, we take an integrated approach to creative planning: branding, content, and marketing--ensuring all parts fit seamlessly together in the right manner.",
+      "Strategy needs creativity to get off the ground. We blend content branding with design and marketing, to create a clear and connected roadmap for your digital presence.",
   },
   {
     number: "03",
     title: "Execution & Launch",
     description:
-      "Our experts make everything come alive, from design and development through campaign launches. They make sure everything runs seamlessly.",
+      "This is where ideas come to life. We do it all, from design and development to launches of campaigns. We are focused on producing work that is on strategy and fit for purpose.",
   },
   {
     number: "04",
     title: "Optimization & Scale",
     description:
-      "Our focus on optimization & scaling involves improving what is working, testing new ideas, and helping your business expand faster over time.",
+      "Launch isn’t the finish line. We look at what is working, what needs work, we test new ideas and refine our approach to allow businesses to build on their progress and create opportunities for future growth.",
   },
 ];

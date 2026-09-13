@@ -32,7 +32,7 @@ export default function ProcessStep({ step, index }: Props) {
           {step.title}
         </h3>
 
-        <p className="mt-4 text-muted-foreground max-w-xl leading-relaxed">
+        <p className="mt-4 text-muted-foreground max-w-full leading-relaxed">
           {step.description}
         </p>
       </div>
