@@ -9,20 +9,16 @@ export default function Footer() {
   return (
     <footer className="relative bg-black text-white overflow-hidden">
 
-      {/* Soft Radial Glow */}
       <div className="absolute inset-0 flex justify-center items-start pointer-events-none">
         <div className="w-[700px] h-[700px] bg-primary/10 blur-[180px] rounded-full -translate-y-1/3" />
       </div>
 
-      {/* Noise Texture */}
       <div className="noise-overlay" />
 
       <div className="relative z-10 container mx-auto px-6 md:px-20 pt-32 pb-12">
 
-        {/* Top Section */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16">
 
-          {/* Brand */}
           <div>
             <Image src={"/HustlersTech_logo.png"} alt="logo" height={50} width={200}/>
 
@@ -31,7 +27,6 @@ export default function Footer() {
               and performance to build powerful modern brands.
             </p>
 
-            {/* Social Icons */}
             <div className="flex gap-5 mt-8">
               <SocialIcon href="https://www.instagram.com/hustlerstech.official/" icon={<Instagram size={18} />} />
               <SocialIcon href="https://www.linkedin.com/company/hustlers-tech-official/" icon={<Linkedin size={18} />} />
@@ -40,7 +35,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Company */}
           <div>
             <FooterTitle>Quick Links</FooterTitle>
             <FooterLinks
@@ -48,6 +42,7 @@ export default function Footer() {
                 { name: "Home", href: "/" },
                 { name: "About", href: "/about" },
                 // { name: "Services", href: "/services" },
+                { name: "Blogs", href: "/blogs" },
                 { name: "Contact", href: "/contact" },
               ]}
             />

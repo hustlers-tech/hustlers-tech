@@ -239,7 +239,7 @@ import { usePathname } from "next/navigation";
 const NAV_LINKS = [
   { name: "Process", id: "process" },
   { name: "FAQs", id: "faqs" },
-  { name: "Blog", id: "blogs" },
+  // { name: "Blog", id: "blogs" },
 ];
 
 const SERVICES = [
@@ -300,7 +300,6 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between px-5 sm:px-6 py-3.5 md:py-3">
           
-          {/* Logo with Aspect Ratio Warning Fix */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <Image
               src="/HustlersTech_logo.png"
@@ -313,10 +312,8 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop Nav Items */}
           <div className="hidden md:flex items-center gap-7 text-sm font-medium">
             
-            {/* Services Dropdown */}
             <div
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
@@ -369,6 +366,10 @@ export default function Navbar() {
                   <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-[#2596be] transition-all duration-200 group-hover:w-full" />
                 </button>
               ))}
+
+              <Link href="/blogs" className="text-white/75 hover:text-white transition">
+              Blogs
+            </Link>
 
             <Link
               href="/contact"
@@ -438,6 +439,14 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
+
+              <Link
+              href="/blogs"
+              onClick={() => setMobileOpen(false)}
+              className="text-white/90 font-medium py-1.5"
+            >
+              Blogs
+            </Link>
 
             <Link
               href="/contact"
