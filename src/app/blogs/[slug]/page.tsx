@@ -122,7 +122,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!post) return {};
 
   return {
-    title: `${post.meta.title} | Hustlers Tech`,
+    title: `${post.meta.title}`,
     description: post.meta.excerpt,
   };
 }
@@ -242,7 +242,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
         </header>
 
         {post.meta.coverImage && (
-          <div className="relative w-full h-64 sm:h-120 rounded-2xl overflow-hidden mb-12 border border-white/10 bg-[#070b12]">
+          <div className="relative w-full h-64 sm:h-140 rounded-2xl overflow-hidden mb-12 border border-white/10 bg-[#070b12]">
             <Image
               src={post.meta.coverImage}
               alt={post.meta.title}
