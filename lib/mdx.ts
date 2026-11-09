@@ -12,6 +12,7 @@ export interface BlogPostMeta {
   coverImage?: string;
   author?: string;
   readTime?: string;
+  canonicalUrl?: string;
 }
 
 export function getAllBlogs(): BlogPostMeta[] {

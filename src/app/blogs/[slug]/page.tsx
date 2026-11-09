@@ -121,9 +121,15 @@ export async function generateMetadata({ params }: PageProps) {
   const post = getBlogBySlug(slug);
   if (!post) return {};
 
+  const canonical =
+    post.meta.canonicalUrl || `https://hustlerstech.com/blogs/${slug}`;
+
   return {
     title: `${post.meta.title}`,
     description: post.meta.excerpt,
+    alternates:{
+      canonical: canonical,
+    }
   };
 }
 
